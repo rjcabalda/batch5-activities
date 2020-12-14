@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page</title>
+    <style>
+        html, body{
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+        .header{
+            display: block;
+            background-color: #64495C;
+            /* border: solid 1px; */
+            height: 30%;
+            width: 100%;
+        }
+        .title{
+            display: flex;
+            /* border: solid 1px; */
+            height: 70%;
+            justify-content: center;
+            align-items: center;
+            font-family: Brush Script MT;
+            font-size: 2em;
+            color: white;
+        }
+        .navBar{
+            display: flex;
+            height: 30%;
+            align-items: center;
+            justify-content: center;
+        }
+        .navItem{
+            font-family: cambria;
+            font-size: 1.5em;
+            color: white;
+            width: 160px;
+            text-align: center;
+        }
+        .content{
+            /* padding: 10px 200px 0 150px; */
+            /* border: solid 1px; */
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 330px;
+        }
+        .mainContent{
+            display: flex;
+        }
+
+        #image{
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .info{
+            padding: 0 25px;
+            /* width: 400px;  */
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        #tribute-link{
+            text-decoration: none;
+            background-color: #64495C;
+            color: white;
+            width: 80px;
+            height: 27px;
+            text-align: center;
+            padding-top:7px;
+            border-radius: 10px;
+           margin-bottom: 10px;
+        }
+       #tribute-link:hover{
+
+          color: thistle;
+        }
+        #tribute-link:active{
+          text-decoration: underline;
+        }
+        .otherInfo {
+            background-color: thistle;
+            padding: 10px 25px 50px 25px;
+            /* margin-left: 25px; */
+        }
+        .paragraph{
+            font-size: 1.2em;
+            font-family: Comic Sans MS;
+        }
+        .text{
+            font-family: Microsoft New Tai Lue;
+        }
+    @media only screen and (max-width: 992px) {
+        .mainContent {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    @media only screen and (max-width: 992px) {
+        .mainContent {
+            display: flex;
+            flex-direction: column;
+        }
+        .tributePage {
+            font-size: 1.3em;
+        }
+        .navItem {
+            font-size: 1.1em;
+        }
+    }     
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <div>
+                <h1 class="tributePage">Tribute Page</h1>
+            </div>
+        </div>
+        <div class="navBar">
+            <div class="navItem">Home</div>
+            <div class="navItem">Submission</div>
+            <div class="navItem">Blog</div>
+            <div class="navItem">Author</div>
+        </div>
+
+    </div>
+   
+
+        <div class="content">
+
+            <div class="mainContent">
+                
+                <img id="image" src="https://biztechmagazine.com/sites/default/files/tiny-uploads/2012/fujio-masuoka-300.jpg" alt="Fujio Masuoka">
+              
+                <div class="info">
+                    <h1>Dr. Fujio Masuoka</h1>
+                    <h3 class="text" id="img-caption">FLASH MAN</h3>
+                    <p class="paragraph" id="tribute-info">In the early 1980s, Dr. Fujio Masuoka dreamed of developing and perfecting a nonvolatile memory chip that could retain data even when its power source had been shut off. His breakthrough came in 1984, when Masuoka created NOR flash memory while working at Toshiba. His 4 megabit NAND-type flash memory was unveiled at the International Solid-State.</p>
+                    <a id="tribute-link" href="https://www.ithistory.org/honor-roll/dr-fujio-masuoka" target="_blank">Reference</a>
+                </div>
+            </div>
+
+            <div class="otherInfo">
+                <h2 class="text">Affiliation</h2>
+                <P class="paragraph" style="font-family: MV Boli;">Res. Inst. Electr. Commun., Tohoku Univ., Sendai</P>
+    
+                <h2 class="text">Biography</h2>
+                <p class="paragraph" >Fujio Masuoka (F'00) was born on <time datetime="1943-05-08"> May 8, 1943</time>, in Gunma, Japan. He received the <abbr>B.E.</abbr>, <abbr>M.E.</abbr>, and <abbr title="Doctor of Philosophy">Ph.D.</abbr> degrees in electrical engineering from Tohoku University in 1966, 1968, and 1971, respectively.,In 1971, he joined Toshiba Research and Development Center, Kawasaki, Japan, where, in 1972, he developed stacked gate avalanche injection-type MOS read-only memory (SAMOS) for the first time. SAMOS is the origin of current EPROM and Flash Memory. In 1976, he developed dynamic memory cell with double poly-Si structure. In 1977, he moved to Toshiba Semiconductor Business Division, where he developed 1-Mb DRAM, and in 1980, he applied a flash memory patent for the first time. In 1984, he presented flash memory for the first time at IEDM and, in 1985, at ISSCC. In 1987, he returned to Toshiba Research and Development Center, where he began to develop nand structured Flash memory, which was presented in 1987 at IEDM. He moved to Tohoku University, Sendai, Japan, as a Professor in 1994. He has 170 registered patents in the United States, Germany, France, and Great Britain, 100 registered patents in Japan, and 71 pending patents. He authored or coauthored approximately 150 papers.,Dr. Masuoka received the “IEEE Morris N. Liebmann Memorial Award,” in 1997 and The Ichimura Prizes in Industry (which is the main prize for the development of Flash Memory) in 2000. He is a member of the Institute of Electronics, Information, and Communication Engineers (IEICE) of Japan.(Based on document published on <time datetime="2005-05-23">23 May 2005)</time>.</p>
+            
+                <h2 class="text">Fujio Masuoka Invents Flash Memory</h2>
+                <p class="paragraph" >About 1980 Fujio MasuokaOffsite Link, working at Toshiba, invented flash memoryOffsite Link.
+    
+                    "According to Toshiba, the name "flash" was suggested by <abbr title="Doctor">Dr</abbr>. Masuoka's colleague, Mr. Shoji Ariizumi, because the erasure process of the memory contents reminded him of a flash of a camera. Dr. Masuoka presented the invention at the IEEE 1984 International Electron Devices Meeting (IEDM) held in San Francisco, California" (Wikipedia article on flash memory, accessed 04-01-2009).</p>
+            </div>
+
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board</title>
+</head>
+<style>
+     body{
+        margin: 0;
+        padding: 0;
+        
+    }
+     nav{
+        height: 20%;
+    } 
+    .content{
+        display: flex;
+        align-items: center;
+        height: 100px;
+        max-width: 100%;
+        background-color: #996E8A;
+        
+         padding-left: 50px; 
+        font-size: 2em;
+        font-family: inmpact;
+        color: #FFFFFF;
+    }
+    .container {
+        display: grid;
+        max-width: 600px;
+        height: 600px;
+        margin: 50px auto 0 auto;
+        border: solid 1px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+    
+    .piece_white{
+        display: grid;
+        height: 100%;
+        width: 100%;   
+        background-color:#F7F28A;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+    .piece_black{
+        display: grid;
+        height: 100%;
+        width: 100%;
+        background-color: #4C2E4C;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+    div img {
+        width: 80%;
+        /* height: 70%; */
+        object-fit: cover;
+    }
+
+    @media only screen and (max-width: 600px) {
+    nav{
+        height: 20%;
+    }
+    nav .content{
+       
+        padding-left: 50px;
+        font-size: 1.8em;
+    }
+    .container {
+        max-width: 500px;
+        height: 500px;
+         }
+    }
+    @media only screen and (max-width: 500px) {
+    nav{
+        height: 20%;
+    }
+    nav .content{
+        padding: 0;
+        justify-content: center;
+        font-size: 1.6em;
+    }
+    .container {
+        max-width: 370px;
+        height: 370px;
+         }
+    }
+    @media only screen and (max-width: 400px) {
+    nav{
+        height: 20%;
+    }
+    nav .content{
+        padding: 0;
+        justify-content: center;
+        font-size: 1.4em;
+    }
+    .container {
+        max-width: 270px;
+        height: 270px;
+         }
+    }
+    @media only screen and (max-width: 300px) {
+    nav{
+        height: 20%;
+    }
+    nav .content{
+        padding: 0;
+        justify-content: center;
+        font-size: 1.2em;
+    }    
+    .container {
+        max-width: 170px;
+        height: 170px;
+         }
+    }
+    @media only screen and (max-width: 200px) {
+    nav{
+        height: 20%;
+    }
+    nav .content{
+        padding: 0;
+        justify-content: center;
+        font-size: 1em;
+    }
+    .container {
+        max-width: 150px;
+        height: 150px;
+         }
+    }
+    
+    
+  
+
+</style>
+<body>
+    <nav>
+       <div class="content"><h1>Chessboard</h1></div>
+        
+    <nav>
+    <div class="container">
+            <!-- <div class="row1"> -->
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/Black-king.png" alt="Black King"></div>
+                <div class="piece_white"><img src="images/Black-queen.png" alt="Black Queen"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"><img src="images/Black-horse.png" alt="Black Horse"></div>
+                <div class="piece_black"></div>
+            <!-- </div>
+            <div class="row2"> -->
+                <div class="piece_black"><img src="images/Black-rook.png" alt="Black Rook"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/Black-bishop.png" alt="Black Bishop"></div>
+                <div class="piece_white"></div>
+            <!-- </div>
+            <div class="row3"> -->
+                <div class="piece_white"><img src="images/Black-bishop.png" alt="Black Bishop"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/Black-pawn.png" alt="Black Pawn"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+            <!-- </div>
+            <div class="crow4"> -->
+                <div class="piece_black"><img src="images/White-rook.png" alt="White Rook"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/Black-pawn.png" alt="Black Pawn"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/Black-pawn.png" alt="Black Pawn"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/White-pawn.png" alt="White Pawn"></div>
+                <div class="piece_white"><img src="images/White-rook.png" alt="White Rook"></div>
+            <!-- </div>
+            <div class="row5"> -->
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+            <!-- </div>
+            <div class="row6"> -->
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/White-pawn.png" alt="White Pawn"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"><img src="images/White-horse.png" alt="White Horse"></div>
+                <div class="piece_black"><img src="images/White-pawn.png" alt="White Pawn"></div>
+                <div class="piece_white"></div>
+            <!-- </div>
+            <div class="row7"> -->
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"><img src="images/White-bishop.png" alt="White Bishop"></div>
+                <div class="piece_black"><img src="images/White-horse.png" alt="White Horse"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"><img src="images/White-queen.png" alt="White Queen"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+            <!-- </div>
+            <div class="row8"> -->
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"><img src="images/White-king.png" alt="White King"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+                <div class="piece_black"></div>
+                <div class="piece_white"></div>
+            <!-- </div> -->
+    </div>
+    
+</body>
+</html>
