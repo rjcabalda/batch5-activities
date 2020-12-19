@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-
+    
 </head>
 <style>
     * {
@@ -93,30 +93,98 @@
    
         <form action="" class="calculator" name="calc" method="">
             <span class="tag">Calculator</span>
-            <input type="text" class="value" name="txt" readonly>
-            <span class="num clear" onclick="clear();">AC</span>
-            <span class="num divide" onclick="document.calc.txt.value += '/'">/</span>
-            <span class="num side" name="*" onclick="document.calc.txt.value += '*'">*</span>
+            <input type="text" class="value" name="txt" id="value" readonly>
+            <span class="num clear" onclick="document.calc.txt.value = ''">AC</span>
+            <span class="num divide" id="divide">/</span>
+            <span class="num side" id="multiply">*</span>
             <span class="num" onclick="document.calc.txt.value += '7'">7</span>
             <span class="num" onclick="document.calc.txt.value += '8'">8</span>
             <span class="num" onclick="document.calc.txt.value += '9'">9</span>
-            <span class="num side" onclick="document.calc.txt.value += '-'">-</span>
+            <span class="num side" id="subtract">-</span>
             <span class="num" onclick="document.calc.txt.value += '4'">4</span>
             <span class="num" onclick="document.calc.txt.value += '5'">5</span>
             <span class="num" onclick="document.calc.txt.value += '6'">6</span>
-            <span class="num plus side" onclick="document.calc.txt.value += '+'">+</span>
+            <span class="num plus side" id="add">+</span>
             <span class="num" onclick="document.calc.txt.value += '1'">1</span>
             <span class="num" onclick="document.calc.txt.value += '2'">2</span>
             <span class="num" onclick="document.calc.txt.value += '3'">3</span>
             <span class="num" onclick="document.calc.txt.value += '0'">0</span>
             <span class="num" onclick="document.calc.txt.value += '00'">00</span>
             <span class="num" onclick="document.calc.txt.value += '.'">.</span>
-            <span class="num side" onclick="document.calc.txt.value += '='">=</span>
+            <span class="num side" id="equal">=</span>
         </form>
-    <script>
-        function clear() {
-            document.calc.txt.value = 'hahahah';
-        }
-    </script>
+        
+  <script>
+        let num1 = 0;
+        let num2 = 0;
+        let operator;
+
+    
+        document.getElementById('divide').onclick = function () { 
+            let val = document.getElementById('value').value;
+            num1 = val;
+            document.calc.txt.value += '/';
+            operator = "/";
+        };
+
+        document.getElementById('multiply').onclick = function () { 
+            let val = document.getElementById('value').value;
+            num1 = val;
+            document.calc.txt.value += '*';
+            operator = "*";
+        };
+        document.getElementById('subtract').onclick = function () { 
+            let val = document.getElementById('value').value;
+            num1 = val;
+            document.calc.txt.value += '-';
+            operator = "-";
+        };
+        document.getElementById('add').onclick = function () { 
+            let val = document.getElementById('value').value;
+            num1 = val;
+            document.calc.txt.value += '+';
+            operator = "+";
+        };
+
+        document.getElementById('equal').onclick = function () {
+
+           if(operator == "/"){
+
+                    let val = document.getElementById('value').value;
+                    num2 = val.split('/').pop();
+                    
+                    if(parseFloat(num2)==0){
+                        alert("Any number divided to zero (0) is undefined. \nplease input a number greater than 0.");
+                        document.calc.txt.value = "";
+                    }else{
+                        let answer = parseFloat(num1) / parseFloat(num2);
+                        document.calc.txt.value = answer;
+                        num1 = answer;
+                    }
+           }
+           else if(operator == "*"){
+                    let val = document.getElementById('value').value;
+                    num2 = val.split('*').pop();
+                    let answer = parseFloat(num1) * parseFloat(num2);
+                    document.calc.txt.value = answer;
+                    num1 = answer;   
+           }
+           else if(operator == "-"){
+                    let val = document.getElementById('value').value;
+                    num2 = val.split('-').pop();
+                    let answer = parseFloat(num1) - parseFloat(num2);
+                    document.calc.txt.value = answer;
+                    num1 = answer;
+           }
+           else if(operator == "+"){
+                    let val = document.getElementById('value').value;
+                    num2 = val.split('+').pop();
+                    let answer = parseFloat(num1) + parseFloat(num2);
+                    document.calc.txt.value = answer;
+                    num1 = answer;
+           }
+           else{ alert('You must enter an operator.')}
+        }        
+  </script>      
 </body>
 </html>
