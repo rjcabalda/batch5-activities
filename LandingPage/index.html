@@ -4,58 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bc6335ae95.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="slides.css"> -->
     <title>Landing Page</title>
 </head>
 <body>
 
     <header id="header">
-                <img id="header-img" src="vivo-logo.png" alt="">
-           
+               <div class="logo"> <img id="header-img" src="images/vivo-logo.png" alt=""></div>
                 <nav id="nav-bar">
+                    <input type="checkbox" id="check">
+                    <label for="check" class="checkbtn">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </label>
                     <ul>
-                        <li><a class="nav-link" href="">X Series</a></li>
-                        <li><a class="nav-link" href="">V Series</a></li>
-                        <li><a class="nav-link" href="">Accessories</a></li>
-                        <li><a class="nav-link" href="">About vivo</a></li>
+                        <li><a class="nav-link" href="#home">Home</a></li>
+                        <li><a class="nav-link" href="#xSeries">X Series</a></li>
+                        <li><a class="nav-link" href="#vSeries">V Series</a></li>
+                        <li><a class="nav-link" href="#about">Raffle Entry</a></li>
                     </ul>
                 </nav>
             
     </header>    
 
-    <div class="Page1"> <!--Front Page--> </div> 
-    <div class="Page2">
-        <iframe class="videoAd"
-            src="https://www.youtube.com/embed/Cq1UBS04Xb4">
-        </iframe>
+    <div id="home">
+        
+        <div class="upperHome">
+            <iframe class="videoAd"
+                src="https://www.youtube.com/embed/Cq1UBS04Xb4">
+            </iframe>
+             <img class="vivo-phone" src="images/vivo-phone.png" alt="vivo">
+        </div>
+
+        <div class="lowerHome">
+            <div class="discription">
+                <p><strong>Get a chance to win from more than 7 MILLION worth of granted wishes and prizes.</strong></p>
+                <p><strong>Just purchase any vivo smartphone from November 16 to January 11, 2020 to join!</strong></p>
+           </div>
+                 <h1>Gift Coming in EVERY WEEK!</h1>
+          
+        </div>
     </div>
 
-    <div class="wrapProduct">
-        <div class="productName" ><h2><strong>X Series</strong></h2></div>
-        <div class="product">
-            <div class="product-item"><img class="img" src="https://eu-exstatic-vivofs.vivo.com/8Xa6evfY85lu15Pb/1595472235996/1a33157f9f9c6e86aab86721bc16deec.png" alt="Vivo X50 Pro"></div>
-            <div class="product-item"></div>
-            <div class="product-item"></div>
+    <div id="xSeries">
+       <div class="upperDiv">
+            <div class="phone1">
+                <img class="model-img" src="https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1592895581586/32e84099f26a390cb68c38bcc06e5317.png" alt="X50 Pro">
+                <h1 class="model">X50 Pro</h1>
+                <p class="prize">₱39,999.00</p>
+            </div>
+            <div class="phone2">
+                <img class="model-img" src="https://www.chinahandys.net/wp-content/uploads/2020/06/vivo-x50-vorgestellt/Vivo_X50_Titel.png" alt="X50">
+                <h1 class="model">X50</h1>
+                <p class="prize">₱25,999.00</p>
+            </div>
+            <div class="phone3">
+                <img class="model-img" src="https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1541592672018/21518828a6981575d9147125bd90d02e.png" alt="X21">
+                <h1 class="model">X21</h1>
+                <p class="prize">₱24,999.00</p>
+            </div>
+       </div>
+       <div class="lowerDiv">
+           <h1>X Series</h1>
+       </div>
+    </div> 
+
+    <div id="vSeries">
+        <div class="upperDiv">
+            <div class="phone1">
+                <img class="model-img" src="https://asia-exstatic-vivofs.vivo.com/PSee2l50xoirPK7y/1603180464840/39487506e598ba11ba69067c75ca7b30.png" alt="V20 Pro">
+                <h1 class="model">V20 Pro</h1>
+                <p class="prize">₱24,999.00</p>
+            </div>
+            <div class="phone2">
+                 <img class="model-img" src="images/v20.png" alt="V20">
+                 <h1 class="model">V20</h1>
+                 <p class="prize">₱19,999.00</p>
+            </div>
+            <div class="phone3">
+                 <img class="model-img" src="https://cdn.shopify.com/s/files/1/1684/4603/products/vivo-v17-pro_Glacier-Ice-White_600x.png?v=1578481016" alt="V17 Pro">
+                 <h1 class="model">V17 Pro</h1>
+                 <p class="prize">₱21,999.00</p>
+            </div>
         </div>
-        <div class="productName" ><h2><strong>V Series</strong></h2></div>
-        <div class="product">
-            <div class="product-item"></div>
-            <div class="product-item"></div>
-            <div class="product-item"></div>
+        <div class="lowerDiv">
+            <h1>V Series</h1>
         </div>
-        <div class="productName" ><h2><strong>Accessories</strong></h2></div>
-        <div class="product">
-            <div class="product-item"></div>
-            <div class="product-item"></div>
-            <div class="product-item"></div>
-        </div>
+    </div>
+
+    <div id="about">
+       
         <form id="form" action="" method="post">
-            <label for="email">Email</label> <input type="email" name="email" id="email" placeholder="Please enter email address." required>
-            <input id="submit" type="submit" value="Submit">
+            <h1><strong>RAFFLE ENTRY</strong></h1>
+            <label class="label" for="email"><strong>First Name<label class="required">*</label></strong></label> <input class="inputField" type="text" name="FirstName" id="FirstName" placeholder="Please enter your first name." required>
+            <label class="label" for="email"><strong>Last Name<label class="required">*</label></strong></label> <input class="inputField" type="text" name="LastName" id="LastName" placeholder="Please enter your Last name." required>
+            <label class="label" for="email"><strong>Complete Address<label class="required">*</label></strong></label> <input class="inputField" type="text" name="address" id="address" placeholder="Please enter your complete address." required>
+            <label class="label" for="email"><strong>Email<label class="required">*</label></strong></label> <input class="inputField" type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Please enter email address." required>
+            <input id="submit" type="submit" value="SEND ENTRY">
         </form>
     </div>
+    <footer>
 
-    
-
-        
+    </footer>
+     
 </body>
 </html>

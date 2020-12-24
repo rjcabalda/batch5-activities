@@ -1,101 +1,305 @@
-    body, html {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
+* {
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+#header {
+    position: fixed;
+    top: 0;
+    background-color:black;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+}
+.logo {
+    height: 30px;
+    width: 130px;
+    position: absolute;
+    margin: 0 0 8px 150px;
+}
+.logo #header-img{
+    width: 100%;
+    height: 100%;
+}
+#nav-bar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+#nav-bar ul{
+    padding-right: 50px;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+}
+#nav-bar ul li{  
+   margin: auto 5px;  
+   list-style-type: none;
+}
+#nav-bar ul li a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+}
+a:active, a:hover {
+    background: rgba(255,255,255, 0.5);
+    color: black;
+    transition: 0.1s;
+    
+}
+.checkbtn {
+    font-size: 15px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin: auto 0;
+    cursor: pointer;
+    display: none;
+}
+#check {
+    display: none;
+}
+@media only screen and (max-width: 1090px){
+    .logo {
+       
+        margin: 0 0 8px 110px;
     }
-
-    #header {
-        display: flex;
-        background-color: black;
-        max-height: 150px;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        
+}
+@media only screen and (max-width: 975px){
+    .logo {
+        height: 25px;
+        width: 110px;
+        margin: 0 0 8px 90px;
     }
-
-    #header-img {
-        max-height: 27px;
-        margin: auto 60px;
-        
+}
+@media only screen and (max-width: 900px){
+    .logo {
+        height: 25px;
+        width: 110px;
+        margin: 0 0 8px 75px;
     }
-
+    #nav-bar ul li a {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 800px){
+    .checkbtn {
+        display: block;
+    }
     #nav-bar ul {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-    }
-    #nav-bar {
-        display: flex;
-        justify-content: center;
-        width: 90%;
-        
-    }
-    .nav-link {
-        text-decoration: none;
-        color: white;
-        font-size: 24px;
-        padding: 8px 35px 0 15px;
-    }
-    .Page1 {
-        margin-top: 50px;
-        background-image: url("https://mk0vivophstagin43uan.kinstacdn.com/wp-content/uploads/2020/11/promo-header-pc-v2.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-    }
-    .Page2 {
-        background: url("https://static.vecteezy.com/system/resources/previews/000/358/237/non_2x/christmas-illustration-on-shiny-red-background-with-magic-gift-box-vector-holiday-design-for-premium-greeting-card-party-invitation-or-promo-banner.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        width:100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .videoAd {
-        border-style: none;
-        border-radius: 10px;
-        width: 70%;
-        height: 60%;
-    }
-    .wrapProduct {
-        background-color: crimson;
-        display: flex;
         flex-direction: column;
-        height: 100%;
+        position: fixed;
         width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 50px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
     }
-    .productName {
-        display: flex;
-        background-color: darkgoldenrod ;
-        height: 20%px;
-        max-width: 100%;
-        justify-content: center;
-        align-items: center;
+    #nav-bar ul li {
+        display: block;
+        margin: 20px 0;
     }
-    .productName h2 {
-        color: #474747;
-        font-size: 30px;
-        font-family: "Avenir Next", Sans-serif;
+    #nav-bar ul li a {
+        font-size: 20px;
+    }
+    #nav-bar ul li a:hover, #nav-bar ul li a:active {
+       background:none;
+       color: #0082e6;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+@media only screen and (max-width:550px){
+    #nav-bar {
+        margin-right: 20px;
+        justify-content: flex-end;
+    }
+}
 
-    }
+#home {
+    max-width: 100%;
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/1303086/pexels-photo-1303086.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat;
+    background-size: cover;
+}
+.upperHome{
+    max-width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.lowerHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif   ;
+    text-align: center;
+}
+.lowerHome h1 {
+    position: absolute;
+    display: inline;
+    margin:0;
+    padding: 10px;
+    border: 5px solid;
+    border-radius: 30px;
+    border-color: #4F80E5;
+    background: #FFFFFF;
+    color: #638FE8;
+}
+.discription {
+    border: 2px solid;
+    border-color: #638FE8;
+    padding-top: 50px;
+    width: 650px;
+    height: 150px;
+    background: #1737E0;
+    margin-top: 27px;
+    border-radius: 30px 30px 10px 10px;
+}
+.discription p{
+    color: #F8DCF3;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.videoAd{
+    margin: 40px;
+    height: 350px;
+    width: 550px;
+    border-radius: 40px;
+}
+.vivo-phone{
+    margin: 40px;
+    width: 300px;
+    height: 350px;
+}
 
+#xSeries {
+    padding-top: 100px;
+    margin: 0;
+    width: 100%;
+    height: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.phone1{
+    width: 300px;
+    height: 450px;
 
-    .product {
-        background-color: brown;
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .product-item {
-        background-color: cornflowerblue;
-        height: 700px;
-        min-width: 400px;
-        margin: 10px 10px;
-    }
+}
+.phone2{
+    width: 300px;
+    height: 450px;
+}
+.phone3{
+    width: 300px;
+    height: 450px;
+}
+.model-img{
+    height: 300px;
+    width: 100%;
+}
+.model {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5em;
+}
+.prize {
+    text-align: center;
+}
+.upperDiv{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.lowerDiv{
+    width: 80%;
+    height: 20%;
+    display: inline;
+    text-align: center;
+}
+#vSeries {
+    padding-top: 100px;
+    margin: 0;
+    width: 100%;
+    height: 700px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    margin: 0;
+    width: 100%;
+    height: 700px;
+    background: url('https://images.wallpapersden.com/image/wxl-merry-christmas-2019_63431.jpg') no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#form{
+    width: 300px;
+    display: flex;
+    /* height: 200px; */
+    flex-direction: column;
+    /* background: skyblue; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.label{
+    margin-top: 15px;
+    font-size: 15px;
+}
+form h1 {
+    margin: 0;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.inputField{
+    margin: 10px 0;
+    height: 50px;
+    width: 300px;
+    border-radius: 40px;
+    outline: none;
+    border-color: #4260FF;
+}
+#submit {
+    margin-top: 20px;
+    align-self:center;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background: #008CBA;
+    box-shadow: 5px 10px 18px;
+}
+    
+
+#submit:hover, #submit:active {
+    background: skyblue;
+}
+.required {
+    margin-left: 5px;
+    font-size: 1.2em;
+    color: red;
+}
+footer{
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    background: black;
+}
+

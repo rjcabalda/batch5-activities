@@ -25,9 +25,9 @@
         position: relative;
         display: grid;
         padding: 40px 10px 10px 10px;
-        background:#171819;
+        background:#F0F5F8;
         border-radius: 20px;
-        
+        margin-top: 20px;
     }
     .calculator .tag {
         grid-column: span 4;
@@ -35,7 +35,7 @@
         text-align: center;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 2em;
-        color: white;
+        color: #84A6DC  ;
 
     }
     .calculator .value {
@@ -57,9 +57,9 @@
         width: 60px;
         height: 60px;
         color: white;
-        background-color: #303536;
-        place-items: center;  /* for text to be center top-bottom and left-right */
         border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #FF4F59;
+        place-items: center;  /* for text to be center top-bottom and left-right */
     }
     .calculator span.clear {
         grid-column: span 2;
@@ -72,7 +72,7 @@
         height: 120px;
     }
     .calculator span.side {
-        background: royalblue;
+        background: #669DB2;
     }
     .calculator span:active {
         background:green;
@@ -85,12 +85,33 @@
     .calculator .divide {
         background: #94A7AE;
     }
+    .check:checked ~ .calculator {
+        background:#171819;
+        
+    }
+    .check:checked ~ .calculator .num {
+        background-color: #303536;
+    }
+    .check:checked ~ .calculator span.clear {
+        background:#94A7AE;
+    }
+    .check:checked ~ .calculator span.side {
+        background: royalblue;
+    }
+    .check:checked ~ .calculator .tag { 
+        color:#F0F5F8;
+        
+    }
+    
     
     
 
 </style>
 <body>
-   
+            <label for="Dark Mode" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #081C64;">Dark mode:</label>
+            <input type="checkbox" class="check" checked>
+          <div class="content"></div>
+    
         <form action="" class="calculator" name="calc" method="">
             <span class="tag">Calculator</span>
             <input type="text" class="value" name="txt" id="value" readonly>
