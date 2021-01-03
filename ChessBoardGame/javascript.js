@@ -39,21 +39,21 @@
     const whitequeen = document.querySelector('.white-queen');
 
 
-    blackpawn1.addEventListener('dragstart', function (){newFill = blackpawn1;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn1.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn1;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn1.addEventListener('dragend', function() {this.className= 'blackpawn1';});
-    blackpawn2.addEventListener('dragstart', function (){newFill = blackpawn2;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn2.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn2;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn2.addEventListener('dragend', function() {this.className= 'blackpawn2';});
-    blackpawn3.addEventListener('dragstart', function (){newFill = blackpawn3;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn3.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn3;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn3.addEventListener('dragend', function() {this.className= 'blackpawn3';});
-    blackpawn4.addEventListener('dragstart', function (){newFill = blackpawn4;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn4.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn4;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn4.addEventListener('dragend', function() {this.className= 'blackpawn4';});
-    blackpawn5.addEventListener('dragstart', function (){newFill = blackpawn5;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn5.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn5;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn5.addEventListener('dragend', function() {this.className= 'blackpawn5';});
-    blackpawn6.addEventListener('dragstart', function (){newFill = blackpawn6;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn6.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn6;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn6.addEventListener('dragend', function() {this.className= 'blackpawn6';});
-    blackpawn7.addEventListener('dragstart', function (){newFill = blackpawn7;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn7.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn7;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn7.addEventListener('dragend', function() {this.className= 'blackpawn7';});
-    blackpawn8.addEventListener('dragstart', function (){newFill = blackpawn8;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    blackpawn8.addEventListener('dragstart', function (){b_currentLetter = this.parentNode.getAttribute("id").charAt(0);b_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = blackpawn8;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackpawn8.addEventListener('dragend', function() {this.className= 'blackpawn8';});
 
     
@@ -75,23 +75,6 @@
     blackqueen.addEventListener('dragstart', function (){newFill = blackqueen;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     blackqueen.addEventListener('dragend', function() {this.className= 'blackqueen';});
 
-    whitepawn1.addEventListener('dragstart', function (){newFill = whitepawn1;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn1.addEventListener('dragend', function() {this.className= 'whitepawn1';});
-    whitepawn2.addEventListener('dragstart', function (){newFill = whitepawn2;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn2.addEventListener('dragend', function() {this.className= 'whitepawn2';});
-    whitepawn3.addEventListener('dragstart', function (){newFill = whitepawn3;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn3.addEventListener('dragend', function() {this.className= 'whitepawn3';});
-    whitepawn4.addEventListener('dragstart', function (){newFill = whitepawn4;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn4.addEventListener('dragend', function() {this.className= 'whitepawn4';});
-    whitepawn5.addEventListener('dragstart', function (){newFill = whitepawn5;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn5.addEventListener('dragend', function() {this.className= 'whitepawn5';});
-    whitepawn6.addEventListener('dragstart', function (){newFill = whitepawn6;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn6.addEventListener('dragend', function() {this.className= 'whitepawn6';});
-    whitepawn7.addEventListener('dragstart', function (){newFill = whitepawn7;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn7.addEventListener('dragend', function() {this.className= 'whitepawn7';});
-    whitepawn8.addEventListener('dragstart', function (){newFill = whitepawn8;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn8.addEventListener('dragend', function() {this.className= 'whitepawn8';});
-
     whiterook1.addEventListener('dragstart', function (){newFill = whiterook1;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     whiterook1.addEventListener('dragend', function() {this.className= 'whiterook1';});
     whiterook2.addEventListener('dragstart', function (){newFill = whiterook2;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
@@ -109,6 +92,41 @@
     whitequeen.addEventListener('dragstart', function (){newFill = whitequeen;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     whitequeen.addEventListener('dragend', function() {this.className= 'whitequeen';});
 
+    let b_currentLetter;
+    let b_currentNumber;
+    let b_nextLetter;
+    let b_nextNumber;
+
+    let w_currentLetter;
+    let w_currentNumber;
+    let w_nextLetter;
+    let w_nextNumber;
+
+    whitepawn1.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn1;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn1.addEventListener('dragend', function() {this.className= 'whitepawn1';});
+    whitepawn2.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn2;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn2.addEventListener('dragend', function() {this.className= 'whitepawn2';});
+    whitepawn3.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn3;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn3.addEventListener('dragend', function() {this.className= 'whitepawn3';});
+    whitepawn4.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn4;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn4.addEventListener('dragend', function() {this.className= 'whitepawn4';});
+    whitepawn5.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn5;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn5.addEventListener('dragend', function() {this.className= 'whitepawn5';});
+    whitepawn6.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn6;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn6.addEventListener('dragend', function() {this.className= 'whitepawn6';});
+    whitepawn7.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn7;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn7.addEventListener('dragend', function() {this.className= 'whitepawn7';});
+    whitepawn8.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn8;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+    whitepawn8.addEventListener('dragend', function() {this.className= 'whitepawn8';});
+
+    // function currentState(){
+    //     console.log(this.parentNode.getAttribute("id"));
+    // }
+    // function nextMove(){
+
+    // }
+
+
 for(const empty of empties){
     empty.addEventListener('dragover', dragOver);
     empty.addEventListener('dragenter', dragEnter);
@@ -119,6 +137,7 @@ for(const empty of empties){
 //function of move pieces
 function dragOver(e){
     e.preventDefault();
+    // console.log(w_currentLetter+"    "+w_currentNumber);
 }
 
 function dragEnter(e){
@@ -132,50 +151,196 @@ function dragLeave(){
 }
 
 function dragDrop(){
-    if(this.getElementsByTagName('*').length > 0){
-        console.log(this.getElementsByTagName('*').length);
-    }
-    else{   
-        this.append(newFill);
-        console.log(this.getElementsByTagName('*').length);
-    }
-    
+     //----------------Black Pawn function---------------------
+
+     b_nextLetter = this.getAttribute("id").charAt(0);
+     b_nextNumber = this.getAttribute("id").slice(1);
+     console.log(b_nextLetter+"    "+b_nextNumber);
+
+     
+
+     if(this.getElementsByTagName('*').length <= 0 && b_currentLetter === b_nextLetter){ 
+
+                     if(parseInt(b_currentNumber) == 7 && parseInt(b_nextNumber) == (parseInt(b_currentNumber)-1)){
+                         this.append(newFill);   
+                     }
+                     else if(parseInt(b_currentNumber) == 7 && parseInt(b_nextNumber) == (parseInt(b_currentNumber)-2)){
+                         this.append(newFill);   
+                     }else{
+                         if(parseInt(b_nextNumber) == (parseInt(b_currentNumber)-1)){
+                             this.append(newFill);  
+                         }
+                         
+                     }
+         }else{
+     
+     }
+
+     //----------------Black Pawn function---------------------
+
+    //----------------White Pawn function----------------
+        w_nextLetter = this.getAttribute("id").charAt(0);
+        w_nextNumber = this.getAttribute("id").slice(1);
+        
+
+        
+
+        if(this.getElementsByTagName('*').length <= 0 && w_currentLetter === w_nextLetter){ 
+
+                        if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
+                            this.append(newFill);   
+                        }
+                        else if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+2)){
+                            this.append(newFill);   
+                        }else{
+                            if(parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
+                                this.append(newFill);  
+                            }
+                            
+                        }
+            }else{
+        
+        }
+    //----------------Pawn function----------------
     
 }
 
-window.onload = () => {
-    let hour = 0;
-    let minute = 0;
-    let seconds = 0;
-    let totalSeconds = 0;
+//-----------------Timer-----------------
+    document.getElementById("b_minute").innerHTML = "05";
+    document.getElementById("b_seconds").innerHTML = "00";
+    document.getElementById("w_minute").innerHTML = "05";
+    document.getElementById("w_seconds").innerHTML = "00";
+    let w_minute = 5;
+    let w_seconds = 0;
+    let w_totalSeconds = 0;   
+
+    let w_intervalId = null;
+    let b_intervalId = null;
+
+    let b_minute = 5;
+    let b_seconds = 0;
+    let b_totalSeconds = 0;
+
+    let b_status = 0;
+    let w_status = 0;
+
+    let pause = true;
+    let hasClicked = false;
     
-    let intervalId = null;
-    
-    function startTimer() {
-      ++totalSeconds;
-      hour = Math.floor(totalSeconds /3600);
-      minute = Math.floor((totalSeconds - hour*3600)/60);
-      seconds = totalSeconds - (hour*3600 + minute*60);
-  
-      document.getElementById("hour").innerHTML =hour;
-      document.getElementById("minute").innerHTML =minute;
-      document.getElementById("seconds").innerHTML =seconds;
+    function w_startTimer() {
+            ++w_totalSeconds;
+            w_seconds = Math.floor( 60 - w_totalSeconds);
+
+                if(w_seconds == 0){
+                    w_minute -= 1;
+                    w_totalSeconds = 0;
+                }
+                if(w_minute == -1 && w_seconds == 0){
+                    w_minute = 0;
+                    clearInterval(w_intervalId);
+                    clearInterval(b_intervalId);
+
+                    alert("Time's up!\nWhite Team");
+                }
+                    if(w_seconds < 10){ 
+                        document.getElementById("w_seconds").innerHTML = ("0" + w_seconds).slice(-2);
+                    }else{
+                        document.getElementById("w_seconds").innerHTML = w_seconds; 
+                    }
+            document.getElementById("w_minute").innerHTML = ("0" + w_minute).slice(-2);
     }
-  
-    document.getElementById('start-btn').addEventListener('click', () => {
-      intervalId = setInterval(startTimer, 1000);
-    })
+
+    function b_startTimer() {
+
+            ++b_totalSeconds;
+
+            b_seconds = Math.floor( 60 - b_totalSeconds);
+
+                if(b_seconds == 0){
+                    b_minute -= 1;
+                    b_totalSeconds = 0;
+                }
+                if(b_minute == -1 && b_seconds == 0){
+                    b_minute = 0;
+                    clearInterval(w_intervalId);
+                    clearInterval(b_intervalId);
+
+                    alert("Time's up!\nBlack Team");
+                }
+                    if(b_seconds < 10){ 
+                        document.getElementById("b_seconds").innerHTML = ("0" + b_seconds).slice(-2);
+                    }else{
+                        document.getElementById("b_seconds").innerHTML = b_seconds; 
+                    }
+            document.getElementById("b_minute").innerHTML = ("0" + b_minute).slice(-2);
+            
+        }
+
+    document.getElementById('black-btn').addEventListener('click', () => {
+                if(pause){
+                    if(b_status == 0){
+                        b_status++;
+                        w_status = 0;
+                        w_intervalId = setInterval(w_startTimer, 1000);
+                        clearInterval(b_intervalId);
+                        hasClicked = true;
+                    }
+                }
+             });
+
+    document.getElementById('white-btn').addEventListener('click', () => {
+                if(pause){
+                    if(w_status == 0){
+                        w_status++;
+                        b_status = 0;
+                        b_intervalId = setInterval(b_startTimer, 1000);
+                        clearInterval(w_intervalId);
+                        hasClicked = true;
+                        }
+                }
+                
+        });
     
-    document.getElementById('stop-btn').addEventListener('click', () => {
-      if (intervalId)
-        clearInterval(intervalId);
+
+    document.getElementById('pause-btn').addEventListener('click', () => {
+        if(pause){
+            if(hasClicked){
+                clearInterval(w_intervalId);
+                clearInterval(b_intervalId);
+                pause = false;
+                document.querySelector('#pause-btn').innerHTML='Resume';
+            }
+            
+        }else{
+            if(hasClicked){
+                if(b_status == 0){
+                    b_intervalId = setInterval(b_startTimer, 1000);
+                }
+                else if(w_status == 0){
+                    w_intervalId = setInterval(w_startTimer, 1000);  
+                }  
+                document.querySelector('#pause-btn').innerHTML='Pause';
+                pause = true; 
+            }
+           
+        }
     });
     
      
     document.getElementById('reset-btn').addEventListener('click', () => {
-       totalSeconds = 0;
-       document.getElementById("hour").innerHTML = '0';
-       document.getElementById("minute").innerHTML = '0';
-       document.getElementById("seconds").innerHTML = '0';
+        w_minute = 4;
+        b_minute = 4;
+        w_totalSeconds = 0;
+        b_totalSeconds = 0;
+        b_status = 0;
+        w_status = 0;
+        pause = true;
+        hasClicked = false;
+        clearInterval(w_intervalId);
+        clearInterval(b_intervalId);
+        
+        document.getElementById("b_minute").innerHTML = "05";
+        document.getElementById("b_seconds").innerHTML = "00";
+        document.getElementById("w_minute").innerHTML = "05";
+        document.getElementById("w_seconds").innerHTML = "00";
     });
-  }

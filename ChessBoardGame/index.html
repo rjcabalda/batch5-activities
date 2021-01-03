@@ -17,93 +17,100 @@
     <div class="bottomTimer">
 
     </div>
-    <div>Hour: <span id="hour"></span></div>
+    <!-- <div>Hour: <span id="hour"></span></div>
     <div>Minute: <span id="minute"></span></div>
-    <div>Second: <span id="seconds"></span></div>
+    <div>Second: <span id="seconds"></span></div> -->
 
-    <button id="start-btn">Start</button>
-    <button id="stop-btn">Stop</button>
-    <button id="reset-btn">Reset</button>
+    <button id="black-btn">Black</button></br>
+    <div>Timer: <span id="b_minute"></span>:<span id="b_seconds"></span></div>
+    </br>
+
+    <button id="pause-btn">Pause</button>
+    <button id="reset-btn">Reset</button></br></br>
+
+    <button id="white-btn">White</button></br>
+    <div>Timer: <span id="w_minute"></span>:<span id="w_seconds"></span></div>
+    </br>
     <div class="container">
             <!-- <div class="row1"> -->
-                <div class="piece_white empty"><img class="black-rook1" src="images/Black-rook.png" alt="Black Rook" draggable="true"></div>
-                <div class="piece_black empty"><img class="black-horse1" src="images/Black-horse.png" alt="Black Horse" draggable="true"></div>
-                <div class="piece_white empty"><img class="black-bishop1" src="images/Black-bishop.png" alt="Black Bishop" draggable="true"></div>
-                <div class="piece_black empty"><img class="black-king" src="images/Black-king.png" alt="Black King" draggable="true"></div>
-                <div class="piece_white empty"><img class="black-queen" src="images/Black-queen.png" alt="Black Queen" draggable="true"></div>
-                <div class="piece_black empty"><img class="black-bishop2" src="images/Black-bishop.png" alt="Black Bishop" draggable="true"></div>
-                <div class="piece_white empty"><img class="black-horse2" src="images/Black-horse.png" alt="Black Horse" draggable="true"></div>
-                <div class="piece_black empty"><img class="black-rook2" src="images/Black-rook.png" alt="Black Rook" draggable="true"></div>
+                <div class="piece_white empty" id="a8"><img class="black-rook1" src="images/Black-rook.png" alt="Black Rook" draggable="true"></div>
+                <div class="piece_black empty" id="b8"><img class="black-horse1" src="images/Black-horse.png" alt="Black Horse" draggable="true"></div>
+                <div class="piece_white empty" id="c8"><img class="black-bishop1" src="images/Black-bishop.png" alt="Black Bishop" draggable="true"></div>
+                <div class="piece_black empty" id="d8"><img class="black-king" src="images/Black-king.png" alt="Black King" draggable="true"></div>
+                <div class="piece_white empty" id="e8"><img class="black-queen" src="images/Black-queen.png" alt="Black Queen" draggable="true"></div>
+                <div class="piece_black empty" id="f8"><img class="black-bishop2" src="images/Black-bishop.png" alt="Black Bishop" draggable="true"></div>
+                <div class="piece_white empty" id="g8"><img class="black-horse2" src="images/Black-horse.png" alt="Black Horse" draggable="true"></div>
+                <div class="piece_black empty" id="h8"><img class="black-rook2" src="images/Black-rook.png" alt="Black Rook" draggable="true"></div>
             <!-- </div>
             <div class="row2"> -->
-                <div class="piece_black empty"><img class="black-pawn1" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
-                <div class="piece_white empty"><img class="black-pawn2" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
-                <div class="piece_black empty"><img class="black-pawn3" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
-                <div class="piece_white empty"><img class="black-pawn4" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
-                <div class="piece_black empty"><img class="black-pawn5" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
-                <div class="piece_white empty"><img class="black-pawn6" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
-                <div class="piece_black empty"><img class="black-pawn7" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
-                <div class="piece_white empty"><img class="black-pawn8" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="a7"><img class="black-pawn1" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="b7"><img class="black-pawn2" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="c7"><img class="black-pawn3" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="d7"><img class="black-pawn4" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="e7"><img class="black-pawn5" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="f7"><img class="black-pawn6" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="g7"><img class="black-pawn7" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="h7"><img class="black-pawn8" src="images/Black-pawn.png" alt="Black Pawn" draggable="true"></div>
             <!-- </div>
             <div class="row3"> -->
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
+                <div class="piece_white empty" id="a6"></div>
+                <div class="piece_black empty" id="b6"></div>
+                <div class="piece_white empty" id="c6"></div>
+                <div class="piece_black empty" id="d6"></div>
+                <div class="piece_white empty" id="e6"></div>
+                <div class="piece_black empty" id="f6"></div>
+                <div class="piece_white empty" id="g6"></div>
+                <div class="piece_black empty" id="h6"></div>
             <!-- </div>
             <div class="crow4"> -->
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
+                <div class="piece_black empty" id="a5"></div>
+                <div class="piece_white empty" id="b5"></div>
+                <div class="piece_black empty" id="c5"></div>
+                <div class="piece_white empty" id="d5"></div>
+                <div class="piece_black empty" id="e5"></div>
+                <div class="piece_white empty" id="f5"></div>
+                <div class="piece_black empty" id="g5"></div>
+                <div class="piece_white empty" id="h5"></div>
             <!-- </div>
             <div class="row5"> -->
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
+                <div class="piece_white empty" id="a4"></div>
+                <div class="piece_black empty" id="b4"></div>
+                <div class="piece_white empty" id="c4"></div>
+                <div class="piece_black empty" id="d4"></div>
+                <div class="piece_white empty" id="e4"></div>
+                <div class="piece_black empty" id="f4"></div>
+                <div class="piece_white empty" id="g4"></div>
+                <div class="piece_black empty" id="h4"></div>
             <!-- </div>
             <div class="row6"> -->
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
-                <div class="piece_black empty"></div>
-                <div class="piece_white empty"></div>
+                <div class="piece_black empty" id="a3"></div>
+                <div class="piece_white empty" id="b3"></div>
+                <div class="piece_black empty" id="c3"></div>
+                <div class="piece_white empty" id="d3"></div>
+                <div class="piece_black empty" id="e3"></div>
+                <div class="piece_white empty" id="f3"></div>
+                <div class="piece_black empty" id="g3"></div>
+                <div class="piece_white empty" id="h3"></div>
             <!-- </div>
             <div class="row7"> -->
-                <div class="piece_white empty"><img class="white-pawn1" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
-                <div class="piece_black empty"><img class="white-pawn2" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
-                <div class="piece_white empty"><img class="white-pawn3" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
-                <div class="piece_black empty"><img class="white-pawn4" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
-                <div class="piece_white empty"><img class="white-pawn5" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
-                <div class="piece_black empty"><img class="white-pawn6" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
-                <div class="piece_white empty"><img class="white-pawn7" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
-                <div class="piece_black empty"><img class="white-pawn8" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="a2"><img class="white-pawn1" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="b2"><img class="white-pawn2" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="c2"><img class="white-pawn3" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="d2"><img class="white-pawn4" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="e2"><img class="white-pawn5" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="f2"><img class="white-pawn6" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_white empty" id="g2"><img class="white-pawn7" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
+                <div class="piece_black empty" id="h2"><img class="white-pawn8" src="images/White-pawn.png" alt="White Pawn" draggable="true"></div>
             <!-- </div>
             <div class="row8"> -->
-                <div class="piece_black empty"><img class="white-rook1"src="images/White-rook.png" alt="White Rook" draggable="true"></div>
-                <div class="piece_white empty"><img class="white-horse1"src="images/White-horse.png" alt="White Horse" draggable="true"></div>
-                <div class="piece_black empty"><img class="white-bishop1"src="images/White-bishop.png" alt="White Bishop" draggable="true"></div>
-                <div class="piece_white empty"><img class="white-king"src="images/White-king.png" alt="White King" draggable="true"></div>
-                <div class="piece_black empty"><img class="white-queen"src="images/White-queen.png" alt="White Queen" draggable="true"></div>
-                <div class="piece_white empty"><img class="white-bishop2"src="images/White-bishop.png" alt="White Bishop" draggable="true"></div>
-                <div class="piece_black empty"><img class="white-horse2"src="images/White-horse.png" alt="White Horse" draggable="true"></div>
-                <div class="piece_white empty"><img class="white-rook2"src="images/White-rook.png" alt="White Rook" draggable="true"></div>
+                <div class="piece_black empty" id="a1"><img class="white-rook1"src="images/White-rook.png" alt="White Rook" draggable="true"></div>
+                <div class="piece_white empty" id="b1"><img class="white-horse1"src="images/White-horse.png" alt="White Horse" draggable="true"></div>
+                <div class="piece_black empty" id="c1"><img class="white-bishop1"src="images/White-bishop.png" alt="White Bishop" draggable="true"></div>
+                <div class="piece_white empty" id="d1"><img class="white-king"src="images/White-king.png" alt="White King" draggable="true"></div>
+                <div class="piece_black empty" id="e1"><img class="white-queen"src="images/White-queen.png" alt="White Queen" draggable="true"></div>
+                <div class="piece_white empty" id="f1"><img class="white-bishop2"src="images/White-bishop.png" alt="White Bishop" draggable="true"></div>
+                <div class="piece_black empty" id="g1"><img class="white-horse2"src="images/White-horse.png" alt="White Horse" draggable="true"></div>
+                <div class="piece_white empty" id="h1"><img class="white-rook2"src="images/White-rook.png" alt="White Rook" draggable="true"></div>
             <!-- </div> -->
     </div>
 <script src="javascript.js"></script>
