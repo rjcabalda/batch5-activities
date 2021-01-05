@@ -48,19 +48,66 @@ function arrangeSuit(array){
 }
 console.log("2.) "+arrangeSuit(cards));
 
-function arrangeValue(array){
-    let newArray=[];
-        for( const a of array){
-             newArray.push(a.slice(1));
+function arrangeValue(cards, order) {
+    let arr = cards;
+    let newArr = arr.map((element) => {
+      switch (element.slice(1, 3)) {
+        case "A":
+          return element.slice(0, 1) + "1";
+        case "J":
+          return element.slice(0, 1) + "11";
+        case "Q":
+          return element.slice(0, 1) + "12";
+        case "K":
+          return element.slice(0, 1) + "13";
+        default:
+          return element;
+      }
+    });
+    if (order === "descending") {
+      for (let i = 0; i < newArr.length; i++) {
+        for (let k = 0; k < newArr.length; k++) {
+          if (
+            parseInt(newArr[k]?.slice(1, 3)) <
+            parseInt(newArr[k + 1]?.slice(1, 3))
+          ) {
+            let temp = newArr[k];
+            newArr[k] = newArr[k + 1];
+            newArr[k + 1] = temp;
+          }
         }
-
-        function compare(a,b){
-            return a-b;
+      }
+    } else {
+      for (let i = 0; i < newArr.length; i++) {
+        for (let k = 0; k < newArr.length; k++) {
+          if (
+            parseInt(newArr[k]?.slice(1, 3)) >
+            parseInt(newArr[k + 1]?.slice(1, 3))
+          ) {
+            let temp = newArr[k];
+            newArr[k] = newArr[k + 1];
+            newArr[k + 1] = temp;
+          }
         }
-    let arrange =  newArray.sort(compare);
+      }
+    }
 
-        return  arrange;
-}
+    arr = newArr.map((element) => {
+      switch (element.slice(1, 3)) {
+        case "1":
+          return element.slice(0, 1) + "A";
+        case "11":
+          return element.slice(0, 1) + "J";
+        case "12":
+          return element.slice(0, 1) + "Q";
+        case "13":
+          return element.slice(0, 1) + "K";
+        default:
+          return element;
+      }
+    });
+    return arr;
+  }
 console.log("3.) "+arrangeValue(cards));
 
 function dealCard(array){ 
@@ -142,7 +189,3 @@ function dealCard(array){
     return array[randomIndex]+": "+numWord+symbolWord;
 }
  console.log("4.) "+dealCard(cards));
-
-
-
-    
