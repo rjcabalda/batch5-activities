@@ -102,10 +102,70 @@
     let w_nextLetter;
     let w_nextNumber;
 
+    let alphabet = ["a","b","c","d","e","f","g","h"];
+
+    
+            let codelines = document.getElementById('a3').getElementsByTagName('*').item(0).getAttribute('class').replace(/ .*/,'');
+            // console.log(codelines); 
     whitepawn1.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn1;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     whitepawn1.addEventListener('dragend', function() {this.className= 'whitepawn1';});
-    whitepawn2.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn2;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
-    whitepawn2.addEventListener('dragend', function() {this.className= 'whitepawn2';});
+
+
+ //----------------------------------test button-------------------------------------------- 
+ 
+ 
+    whitepawn2.addEventListener('dragstart', function (){
+
+        
+
+        w_currentLetter = this.parentNode.getAttribute("id").charAt(0);
+        w_currentNumber = this.parentNode.getAttribute("id").slice(1);
+
+        
+        
+        let right = alphabet.indexOf(w_currentLetter)+1;
+        let left = alphabet.indexOf(w_currentLetter)-1;
+      
+
+        w_nextLetter = this.parentNode.getAttribute("id").charAt(0);
+        w_nextNumber = this.parentNode.getAttribute("id").slice(1);
+        // console.log((w_currentLetter+(parseInt(w_nextNumber)+1)));
+        document.getElementById(w_currentLetter+(parseInt(w_nextNumber)+1)).classList.add('nextMove');
+        document.getElementById(w_currentLetter+(parseInt(w_nextNumber)+2)).classList.add('nextMove');
+        
+        
+        
+
+        if(this.getElementsByTagName('*').length <= 0 && w_currentLetter === w_nextLetter){ 
+
+            if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
+                this.className =  'nextMove';
+            }
+            else if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+2)){
+                this.className =  'nextMove';
+            }else{
+                if(parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
+                    this.className =  'nextMove'; 
+                }
+            }
+            }else{
+        }
+        
+        
+        newFill = whitepawn2;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
+
+    whitepawn2.addEventListener('dragend', function() {
+        this.className= 'whitepawn2';
+        this.parentNode.append(whitepawn2);  
+        console.log(this.getElementsByTagName('*').length);
+    });
+
+
+ //----------------------------------test button--------------------------------------------  
+
+
+
+
     whitepawn3.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn3;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     whitepawn3.addEventListener('dragend', function() {this.className= 'whitepawn3';});
     whitepawn4.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn4;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
@@ -119,13 +179,6 @@
     whitepawn8.addEventListener('dragstart', function (){w_currentLetter = this.parentNode.getAttribute("id").charAt(0);w_currentNumber = this.parentNode.getAttribute("id").slice(1);newFill = whitepawn8;this.className += ' hold';setTimeout(() => this.className = 'invisible', 0);});
     whitepawn8.addEventListener('dragend', function() {this.className= 'whitepawn8';});
 
-    // function currentState(){
-    //     console.log(this.parentNode.getAttribute("id"));
-    // }
-    // function nextMove(){
-
-    // }
-
 
 for(const empty of empties){
     empty.addEventListener('dragover', dragOver);
@@ -137,12 +190,12 @@ for(const empty of empties){
 //function of move pieces
 function dragOver(e){
     e.preventDefault();
-    // console.log(w_currentLetter+"    "+w_currentNumber);
 }
 
 function dragEnter(e){
     e.preventDefault();
     // this.className += ' hovered';
+    
 }
 
 function dragLeave(){
@@ -151,65 +204,21 @@ function dragLeave(){
 }
 
 function dragDrop(){
-     //----------------Black Pawn function---------------------
 
-     b_nextLetter = this.getAttribute("id").charAt(0);
-     b_nextNumber = this.getAttribute("id").slice(1);
-     console.log(b_nextLetter+"    "+b_nextNumber);
+    console.log(this.getElementsByTagName('*').length);
 
-     
+    blackPawn(this); //----------------Black Pawn function---------------------
 
-     if(this.getElementsByTagName('*').length <= 0 && b_currentLetter === b_nextLetter){ 
-
-                     if(parseInt(b_currentNumber) == 7 && parseInt(b_nextNumber) == (parseInt(b_currentNumber)-1)){
-                         this.append(newFill);   
-                     }
-                     else if(parseInt(b_currentNumber) == 7 && parseInt(b_nextNumber) == (parseInt(b_currentNumber)-2)){
-                         this.append(newFill);   
-                     }else{
-                         if(parseInt(b_nextNumber) == (parseInt(b_currentNumber)-1)){
-                             this.append(newFill);  
-                         }
-                         
-                     }
-         }else{
-     
-     }
-
-     //----------------Black Pawn function---------------------
-
-    //----------------White Pawn function----------------
-        w_nextLetter = this.getAttribute("id").charAt(0);
-        w_nextNumber = this.getAttribute("id").slice(1);
-        
-
-        
-
-        if(this.getElementsByTagName('*').length <= 0 && w_currentLetter === w_nextLetter){ 
-
-                        if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
-                            this.append(newFill);   
-                        }
-                        else if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+2)){
-                            this.append(newFill);   
-                        }else{
-                            if(parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
-                                this.append(newFill);  
-                            }
-                            
-                        }
-            }else{
-        
-        }
-    //----------------Pawn function----------------
+    whitePawn(this); //----------------White Pawn function----------------
     
 }
 
-//-----------------Timer-----------------
+//-----------------Timer----------------------------------------
     document.getElementById("b_minute").innerHTML = "05";
     document.getElementById("b_seconds").innerHTML = "00";
     document.getElementById("w_minute").innerHTML = "05";
     document.getElementById("w_seconds").innerHTML = "00";
+
     let w_minute = 5;
     let w_seconds = 0;
     let w_totalSeconds = 0;   
@@ -344,3 +353,47 @@ function dragDrop(){
         document.getElementById("w_minute").innerHTML = "05";
         document.getElementById("w_seconds").innerHTML = "00";
     });
+//-----------------Timer----------------------------------------    
+
+// ---------------------Function of the Pawn----------------------------------------------
+function blackPawn(currentState){
+    b_nextLetter = currentState.getAttribute("id").charAt(0);
+     b_nextNumber = currentState.getAttribute("id").slice(1);
+    if(currentState.getElementsByTagName('*').length <= 0 && b_currentLetter === b_nextLetter){ 
+
+        if(parseInt(b_currentNumber) == 7 && parseInt(b_nextNumber) == (parseInt(b_currentNumber)-1)){
+            currentState.append(newFill);   
+        }
+        else if(parseInt(b_currentNumber) == 7 && parseInt(b_nextNumber) == (parseInt(b_currentNumber)-2)){
+            currentState.append(newFill);   
+        }else{
+            if(parseInt(b_nextNumber) == (parseInt(b_currentNumber)-1)){
+                currentState.append(newFill);  
+            }
+            
+        }
+    }else{
+
+    }
+}
+
+function whitePawn(currentState){
+    w_nextLetter = currentState.getAttribute("id").charAt(0);
+     w_nextNumber = currentState.getAttribute("id").slice(1);
+    if(currentState.getElementsByTagName('*').length <= 0 && w_currentLetter === w_nextLetter){ 
+
+        if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
+            currentState.append(newFill);   
+        }
+        else if(parseInt(w_currentNumber) == 2 && parseInt(w_nextNumber) == (parseInt(w_currentNumber)+2)){
+            currentState.append(newFill);   
+        }else{
+            if(parseInt(w_nextNumber) == (parseInt(w_currentNumber)+1)){
+                currentState.append(newFill);  
+            }
+        }
+        }else{
+    }
+
+}
+// ---------------------Function of the Pawn----------------------------------------------

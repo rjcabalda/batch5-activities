@@ -1,135 +1,142 @@
-body{
-    margin: 0;
-    padding: 0;
-    
+body {
+  margin: 0;
+  padding: 0;
 }
- nav{
-    height: 20%;
-} 
-.content{
-    display: flex;
-    align-items: center;
-    height: 100px;
-    max-width: 100%;
-    background-color: #996E8A;
-    
-     padding-left: 50px; 
-    font-size: 2em;
-    font-family: inmpact;
-    color: #FFFFFF;
+nav {
+  height: 20%;
+}
+.content {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  max-width: 100%;
+  background-color: #996e8a;
+
+  padding-left: 50px;
+  font-size: 2em;
+  font-family: inmpact;
+  color: #ffffff;
 }
 .container {
-    display: grid;
-    max-width: 600px;
-    height: 600px;
-    margin: 50px auto 0 auto;
-    border: solid 1px;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+  display: grid;
+  max-width: 600px;
+  height: 600px;
+  margin: 50px auto 0 auto;
+  border: solid 1px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
 
-.piece_white{
-    display: grid;
-    height: 100%;
-    width: 100%;   
-    background-color:#F7F28A;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-items: center;
+.piece_white {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #f7f28a;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 1fr; */
+  align-items: center;
+  justify-content: center;
 }
-.piece_black{
-    display: grid;
-    height: 100%;
-    width: 100%;
-    background-color: #4C2E4C;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-items: center;
+.piece_black {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #4c2e4c;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 1fr; */
+  align-items: center;
+  justify-content: center;
 }
 div img {
-    width: 80%;
-    /* height: 70%; */
-    object-fit: cover;
+  width: 80%;
+  /* height: 70%; */
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 600px) {
-nav{
+  nav {
     height: 20%;
-}
-nav .content{
-   
+  }
+  nav .content {
     padding-left: 50px;
     font-size: 1.8em;
-}
-.container {
+  }
+  .container {
     max-width: 500px;
     height: 500px;
-     }
+  }
 }
 @media only screen and (max-width: 500px) {
-nav{
+  nav {
     height: 20%;
-}
-nav .content{
+  }
+  nav .content {
     padding: 0;
     justify-content: center;
     font-size: 1.6em;
-}
-.container {
+  }
+  .container {
     max-width: 370px;
     height: 370px;
-     }
+  }
 }
 @media only screen and (max-width: 400px) {
-nav{
+  nav {
     height: 20%;
-}
-nav .content{
+  }
+  nav .content {
     padding: 0;
     justify-content: center;
     font-size: 1.4em;
-}
-.container {
+  }
+  .container {
     max-width: 270px;
     height: 270px;
-     }
+  }
 }
 @media only screen and (max-width: 300px) {
-nav{
+  nav {
     height: 20%;
-}
-nav .content{
+  }
+  nav .content {
     padding: 0;
     justify-content: center;
     font-size: 1.2em;
-}    
-.container {
+  }
+  .container {
     max-width: 170px;
     height: 170px;
-     }
+  }
 }
 @media only screen and (max-width: 200px) {
-nav{
+  nav {
     height: 20%;
-}
-nav .content{
+  }
+  nav .content {
     padding: 0;
     justify-content: center;
     font-size: 1em;
-}
-.container {
+  }
+  .container {
     max-width: 150px;
     height: 150px;
-     }
+  }
 }
 .hold {
-    border: 4px solid;
+  border: 4px solid;
 }
-.hovered {
-    border-style: dashed;
+.nextMove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px 1px rgb(21, 209, 21);
+}
+.eat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px 1px rgb(21, 209, 21);
 }
 .invisible {
-    display: none;
+  display: none;
 }
