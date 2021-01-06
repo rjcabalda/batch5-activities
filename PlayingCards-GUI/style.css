@@ -1,0 +1,198 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+}
+nav {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background: black;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+nav h1 {
+  font-family: "Brush Script MT", cursive;
+  color: white;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+}
+
+.currentDeal {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  width: 100%;
+  /* background: violet; */
+}
+
+.section1 {
+  height: 100%;
+  width: 50%;
+}
+.section2 {
+  height: 100%;
+  width: 50%;
+}
+
+.remainCards {
+  height: 100px;
+  width: 100%;
+  /* padding: 20px 40px 0 40px; */
+}
+#cards {
+  word-wrap: break-word;
+}
+#history {
+  word-wrap: break-word;
+}
+.history {
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+}
+.section2-top {
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.top {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 25%;
+}
+.mid {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+.mid label {
+  font-size: 6em;
+}
+.bottom {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 25%;
+}
+.currentCard .top .top-in {
+  padding-top: 20px;
+  height: 100%;
+  width: 33.3%;
+  padding-right: 10px;
+}
+.currentCard .bottom .bottom-in {
+  padding-bottom: 0;
+  height: 100%;
+  width: 33.3%;
+  box-sizing: border-box;
+}
+.cCards-top {
+  margin: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 46%;
+  display: block;
+  text-align: center;
+  /* padding-top: 5px; */
+}
+.cCards-bot {
+  margin: 0;
+  /* top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 46%;
+  display: block; */
+  text-align: center;
+  /* margin-bot: 5px; */
+}
+.currentIcon {
+  font-size: 2em;
+}
+.currentIcon {
+  font-size: 2em;
+}
+.btnDiv {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.currentCard {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 219px;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 10px;
+  background: url("https://i.pinimg.com/originals/74/0b/df/740bdfde43a6acc7dd91ae8818ad4f7d.jpg")
+    no-repeat;
+  background-size: cover;
+}
+#prev {
+  height: 30px;
+  width: 50px;
+  border-radius: 7px 0 0 7px;
+  outline: none;
+}
+#next {
+  height: 30px;
+  width: 50px;
+  border-radius: 0 7px 7px 0;
+  outline: none;
+}
+#deal {
+  height: 30px;
+  width: 100px;
+  border-radius: 7px 7px 0 0;
+  outline: none;
+  margin: 10px 0 3px 0;
+}
+#shuffle {
+  height: 30px;
+  width: 100px;
+  border-radius: 0 0 7px 7px;
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .currentDeal {
+    display: flex;
+    flex-direction: column;
+  }
+  /* #cards {
+    width: 100%;
+  } */
+  .section1 {
+    height: 100%;
+    width: 100%;
+  }
+  .section2 {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+div {
+  /* border: 1px solid; */
+}
+.deal5 {
+  max-width: 100%;
+  height: 200px;
+  /* background: violet; */
+}

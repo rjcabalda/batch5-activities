@@ -189,3 +189,4 @@ function dealCard(array){
     return array[randomIndex]+": "+numWord+symbolWord;
 }
  console.log("4.) "+dealCard(cards));
+

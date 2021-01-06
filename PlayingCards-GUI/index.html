@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Playing Cards</title>
+</head>
+<body>
+
+    
+    <nav>
+        <h1>Playing Cards</h1>
+    </nav>
+
+
+
+
+    <div class="container">
+            <div class="currentDeal">
+                <div class="section1">
+                    <div class="remainCards">
+                        <div class="rtop">
+                            <label for="">Remaining Cards: </label>
+                            <label id="numCard" for=""></label>
+                        </div>
+                       <div class="rbottom">
+                            <label id="cards"></label>
+                       </div>
+                    </div>
+                    <div class="history">
+                        <label for="">History: </label></br>
+                        <label id="history" for=""></label>
+                    </div>
+
+                    <div class="btnDiv">
+                        <div>
+                            <button type="button" id="prev" disabled>Prev</button>
+                            <button type="button" id="next" disabled>Next</button>
+                        </div>
+                        
+                        <button type="button" id="deal">Deal</button>
+                        <button type="button" id="shuffle">Reshuffle</button>
+                    </div>
+
+                </div>
+
+                <div class="section2">
+                    <div class=" section2-top">
+                        <!-- <label for="">Current deal card: </label> -->
+                        <label id="currentDeal" for=""></label>
+                    </div>
+    
+                    <div class="currentCard" id="currentCard">
+                        <div class="top">
+                                <div class="top-in" >
+                                    <div class="cCards-top currentIcon"></div>
+                                    <div class="cCards-top  currentNum"></div>
+                                </div>
+                                <div class="top-in"></div>
+                                <div class="top-in"></div>
+                        </div>
+
+                        <div class="mid">
+                            <label id="currentSuit" for=""></label>
+                        </div>
+
+                        <div class="bottom">
+                            <div class="bottom-in"></div>
+                            <div class="bottom-in"></div>
+                            <div class="bottom-in">
+                                <div class="cCards-bot  currentIcon"></div>
+                                <div class="cCards-bot  currentNum"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="deal5">
+                <!-- <button type="button" id=deal5btn></button> -->
+
+            </div>
+
+           
+
+           
+
+
+    </div>
+
+
+    <script src="javascript.js"></script>
+</body>
+</html>
