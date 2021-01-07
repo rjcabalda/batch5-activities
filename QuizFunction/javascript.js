@@ -8,11 +8,7 @@ let questions= [
     "Where is the meta tag only found?", 
     "What is an element that does not have a closing tag called?",
     "Which of the following is an example of an empty element?",
-    "What should values always be enclosed in?"
-
-
-
-];
+    "What should values always be enclosed in?"];
 
 let choices=[];
 let answer;
@@ -69,8 +65,8 @@ function question(){
             
     }
     
-     for(let i=0; i < choices.length; i++){
-         console.log((i+1)+": "+choices[i]);
+     for(let [i , choice] of choices.entries()){
+         console.log((i+1)+": "+choice);
      }
 
 }
