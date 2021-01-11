@@ -32,11 +32,10 @@ let randomIndex1 = 0;
 let currentScore0 = 0;
 let currentScore1 = 0;
 let currentTurn = 0;
-let totalScore0 = 86;
-let totalScore1 = 86;
+let totalScore0 = 0;
+let totalScore1 = 0;
 
-score0.innerHTML = totalScore0;
-score1.innerHTML = totalScore0;
+newGame();
 
 function rollDice() {
     randomIndex0 = (Math.floor(Math.random() * 6)) + 1;
