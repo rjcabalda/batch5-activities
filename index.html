@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avion School</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
+
         nav {
             display: flex;
             height: 100px;
@@ -16,28 +18,32 @@
             align-items: center;
             max-width: 100%;
         }
-        nav h1{
+
+        nav h1 {
             padding: 0;
             margin: 0;
             margin-left: 50px;
             font-family: Franklin Gothic Medium;
             color: white;
         }
-        .container{
+
+        .container {
             display: flex;
             justify-content: center;
         }
+
         ul {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
         }
+
         li {
             list-style-type: none;
             margin: 15px 15px;
             height: 50px;
-            width:  200px;
+            width: 200px;
         }
-        
+
         a {
             display: flex;
             text-decoration: none;
@@ -49,71 +55,95 @@
             justify-items: center;
             align-items: center;
             height: 50px;
-            width:  200px;
+            width: 200px;
             background-color: blueviolet;
             border-radius: 10px;
             box-shadow: 5px 5px 2px #999;
         }
-        a:hover{
+
+        a:hover {
             background-color: rgb(102, 29, 170);
         }
+
         a:active {
             background-color: rgb(102, 29, 170);
             box-shadow: 0 0 #666;
             transform: translateY(4px);
         }
-@media only screen and (max-width: 1015px){
-        ul{
-            grid-template-columns: repeat(3, 1fr); 
+
+        @media only screen and (max-width: 1015px) {
+            ul {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
+
+        @media only screen and (max-width: 760px) {
+            nav {
+                display: flex;
+                justify-content: center;
+            }
+
+            nav h1 {
+                margin-left: 0px;
+            }
+
+            ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-@media only screen and (max-width: 760px){
-    nav {
-            display: flex;
-            justify-content: center;
-        }
-        nav h1{
-            margin-left: 0px;
-        }
-        ul{
-            grid-template-columns: repeat(2, 1fr); 
-        }
-        }
-@media only screen and (max-width: 506px){
-        nav {
-            display: flex;
-            justify-content: center;
-        }
-        nav h1{
-            margin-left: 0px;
-        }
-        ul{
-            grid-template-columns: repeat(1, 1fr); 
-        }
+
+        @media only screen and (max-width: 506px) {
+            nav {
+                display: flex;
+                justify-content: center;
+            }
+
+            nav h1 {
+                margin-left: 0px;
+            }
+
+            ul {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     </style>
 </head>
+
 <body>
     <nav>
         <h1>Avion School Activities</h1>
     </nav>
     <div class="container">
         <ul>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/BestPractices/" alt="" target="_blank">Best Practices.</a><br/></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/LetterActivity/" alt="" target="_blank">Letter Activity</a><br/></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/TributePage/" alt="" target="_blank">Tribute Page</a><br/></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/ChessBoardActivity-FLEX/" alt="" target="_blank">Chessboard Activity using FLEX</a></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/ChessBoardActivity-GRID/" alt="" target="_blank">Chessboard Activity using GRID</a></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/LandingPage/" alt="" target="_blank">Landing Page</a></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/SurveyForm/" alt="" target="_blank">Survey Form</a></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/ChessBoardGame/" alt="" target="_blank">Chess Board Game</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/BestPractices/" alt="" target="_blank">Best
+                    Practices.</a><br /></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/LetterActivity/" alt="" target="_blank">Letter
+                    Activity</a><br /></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/TributePage/" alt="" target="_blank">Tribute
+                    Page</a><br /></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/ChessBoardActivity-FLEX/" alt=""
+                    target="_blank">Chessboard Activity using FLEX</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/ChessBoardActivity-GRID/" alt=""
+                    target="_blank">Chessboard Activity using GRID</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/LandingPage/" alt="" target="_blank">Landing
+                    Page</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/SurveyForm/" alt="" target="_blank">Survey
+                    Form</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/ChessBoardGame/" alt="" target="_blank">Chess
+                    Board Game</a></li>
 
-            <li><a href="https://rjcabalda.github.io/batch5-activities/PlayingCards/" alt="" target="_blank">Playing Cards</a></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/PlayingCards-GUI/" alt="" target="_blank">Playing Cards with GUI</a></li>
-            <li><a href="https://rjcabalda.github.io/batch5-activities/QuizFunction/" alt="" target="_blank">Quiz Function</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/PlayingCards/" alt="" target="_blank">Playing
+                    Cards</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/PlayingCards-GUI/" alt="" target="_blank">Playing
+                    Cards with GUI</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/QuizFunction/" alt="" target="_blank">Quiz
+                    Function</a></li>
+            <li><a href="https://rjcabalda.github.io/batch5-activities/batch5-pig-game/" alt="" target="_blank">Pig
+                    Game</a></li>
         </ul>
-    
+
     </div>
-    
+
 </body>
+
 </html>
