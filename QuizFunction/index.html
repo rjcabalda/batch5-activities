@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Function</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <div class="startQuiz">
+            <div class="score">
+                <label for="">Score: </label><label class="totalScore1" id="score1" for="">0</label>
+            </div>
+            <label class="question" for="">Question: </label>
+            <div class="Earrange">
+                <label for="">A.</label>
+                <label class="choices" for=""></label></div>
+            <div class="Earrange">
+                <label for="">B.</label>
+                <label class="choices" for=""></label>
+            </div>
+            <div class="Earrange">
+                <label for="">C.</label>
+                <label class="choices" for=""></label>
+            </div>
+            <div class="bottom">
+                <input type="text" id="input">
+                <button class="btnQuiz" onclick="next()">Next</button>
+            </div>
+        </div>
+        <div class="endQuiz hide">
+            <label class="align">Your Score: </label><label id="score2" class="align">0</label>
+            <Button class="btnStart align" id="btnStart">Click to Start</Button>
+
+        </div>
+    </div>
+
 
     <script src="javascript.js"></script>
 </body>
+
 </html>
