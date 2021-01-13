@@ -47,7 +47,6 @@ function next() {
     }
     if (input === "exit") {
         showScore2.innerHTML = score;
-        console.log("Score: " + score);
         document.querySelector('.startQuiz').classList.add('hide');
         document.querySelector('.endQuiz').classList.remove('hide');
 
@@ -61,7 +60,6 @@ function next() {
 function StartQuiz() {
     randomIndex = Math.floor(Math.random() * questions.length);
     showScore1.innerHTML = score;
-    console.log("Score: " + score);
     switch (questions[randomIndex]) {
         case questions[0]:
             answer = "a";
