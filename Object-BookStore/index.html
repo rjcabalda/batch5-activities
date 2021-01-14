@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+</head>
+
+<body>
+    <script>
+
+        let store = {
+            name: 'Tindahan ni Mayang',
+            inventory: {
+                book: [{
+                    title: 'Attack of Titan',
+                    quantity: 10,
+                    price: 500,
+                },
+                {
+                    title: 'Attack of Dogs',
+                    quantity: 15,
+                    price: 550,
+                }
+                ]
+            },
+            earning: 0,
+        }
+
+
+
+        // console.log(store.inventory.book[1].quantity);
+
+        function addBook(title, qty, price) {
+            let obj = {
+                title: title,
+                quantity: qty,
+                price: price,
+            }
+            store.inventory.book.push(obj);
+        }
+
+        function restockBook(title, qty) {
+            for (const [i, book] of store.inventory.book.entries()) {
+                if (store.inventory.book[i].title == title.toString()) {
+                    store.inventory.book[i].quantity += qty;
+                }
+            }
+        }
+
+        function sellBook(title, qty) {
+            let hasTitle = false;
+            let moreQty = false;
+            let number = 0;
+            for (const [i, book] of store.inventory.book.entries()) {
+                if (store.inventory.book[i].title === title.toString()) {
+                    hasTitle = true;
+                    if (store.inventory.book[i].quantity >= qty) {
+                        store.inventory.book[i].quantity -= qty;
+                        store.earning += (qty * store.inventory.book[i].price);
+                        moreQty = true;
+                    } else {
+                        number = store.inventory.book[i].quantity
+                    }
+                }
+            }
+            if (!hasTitle) {
+                console.log(`${title} out of stock.`);
+            }
+            if (!moreQty) {
+                console.log(`${number} stock left.`);
+            }
+
+        }
+
+        function totalEarnings() {
+            console.log(`Store: ${store.name}`);
+            console.log(`Earnings: ${store.earning}`);
+        }
+        function listInventory() {
+            console.log(store.inventory.book);
+        }
+
+
+    </script>
+</body>
+
+</html>
