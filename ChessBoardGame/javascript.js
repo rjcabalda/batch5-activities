@@ -8,6 +8,13 @@ let w_nextLetter;
 let w_nextNumber;
 let pawnMove1;
 let pawnMove2;
+let checkMove1;
+let checkMove2;
+
+let right;
+let left;
+let boxRight;
+let boxLeft;
 
 let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h"];
 let newFill;
@@ -37,19 +44,18 @@ for (const empty of empties) {
     empty.addEventListener('drop', dragDrop);
 }
 for (const piece of pieces) {
-    // console.log(piece.alt);
     piece.addEventListener('dragstart', function () {
 
         if (piece.alt === 'White Pawn') {
             currentPiece = 'White Pawn';
-            wPawnDragStart(piece);
+            wPawnDrag(piece, 'DragStart');
             newFill = piece;
             setTimeout(() => this.className = 'invisible', 0);
 
         }
         else if (piece.alt === 'Black Pawn') {
             currentPiece = 'Black Pawn';
-            bPawnDragStart(piece);
+            bPawnDrag(piece, 'DragStart');
             newFill = piece;
             setTimeout(() => this.className = 'invisible', 0);
         }
@@ -82,107 +88,141 @@ function dragLeave() {
 }
 
 function dragDrop() {
-    // console.log(currentPiece);
+
     if (currentPiece == 'White Pawn') {
-        whitePawnDrop(this); //----------------White Pawn function----------------
+        wPawnDrag(this, 'DragDrop'); //----------------White Pawn function----------------
     } else {
-        blackPawnDrop(this); //----------------Black Pawn function---------------------
+        bPawnDrag(this, 'DragDrop'); //----------------Black Pawn function---------------------
     }
 }
-// ---------------------Function of the Pawn----------------------------------------------
-function blackPawnDrop(currentState) {
-    // console.log('black drop');
-    w_nextLetter = currentState.getAttribute("id").charAt(0);
-    w_nextNumber = currentState.getAttribute("id").slice(1);
-    let checkMove1 = document.getElementById(pawnMove1)?.children.length;
-    let checkMove2 = document.getElementById(pawnMove2)?.children.length;
-    if (currentState.classList.contains('nextMove')) {
-        document.getElementById(pawnMove1)?.classList.remove('nextMove');
-        document.getElementById(pawnMove2)?.classList.remove('nextMove');
-        currentState.append(newFill);
-    } else {
-        document.getElementById(pawnMove1)?.classList.remove('nextMove');
-        document.getElementById(pawnMove2)?.classList.remove('nextMove');
-    }
+// ---------------------Function of the black Pawn----------------------------------------------
 
-}
+function bPawnDrag(state, move) {
+    if (move === 'DragStart') {
+        b_currentLetter = state?.parentNode.id.charAt(0);
+        b_currentNumber = state?.parentNode.id.slice(1);
+        b_nextLetter = state?.parentNode.id.charAt(0);
+        b_nextNumber = parseInt(state?.parentNode.id.slice(1)) - 1;
+        pawnMove1 = b_currentLetter + b_nextNumber;
+        pawnMove2 = b_currentLetter + ((parseInt(b_nextNumber) - 1));
+        checkMove1 = document.getElementById(pawnMove1)?.children.length;
+        checkMove2 = document.getElementById(pawnMove2)?.children.length;
 
-function whitePawnDrop(currentState) {
-    // w_nextLetter = currentState.getAttribute("id").charAt(0);
-    // w_nextNumber = currentState.getAttribute("id").slice(1);
-    let checkMove1 = document.getElementById(pawnMove1)?.children.length;
-    let checkMove2 = document.getElementById(pawnMove2)?.children.length;
-    console.log(currentState.classList.contains('nextMove'));
-    if (currentState.classList.contains('nextMove')) {
-        document.getElementById(pawnMove1)?.classList.remove('nextMove');
-        document.getElementById(pawnMove2)?.classList.remove('nextMove');
-        currentState.append(newFill);
-    }
-    else {
-        document.getElementById(pawnMove1)?.classList.remove('nextMove');
-        document.getElementById(pawnMove2)?.classList.remove('nextMove');
-    }
-}
-// ---------------------Function of the Pawn----------------------------------------------
+        right = (alphabet[alphabet.indexOf(b_currentLetter) + 1]) + b_nextNumber;
+        left = (alphabet[alphabet.indexOf(b_currentLetter) - 1]) + b_nextNumber;
+        boxRight = document?.getElementById(right);
+        boxLeft = document?.getElementById(left);
 
-function wPawnDragStart(state) {
-    w_currentLetter = state?.parentNode.id.charAt(0);
-    w_currentNumber = state?.parentNode.id.slice(1);
-    w_nextLetter = state?.parentNode.id.charAt(0);
-    w_nextNumber = parseInt(state?.parentNode.id.slice(1)) + 1;
-    pawnMove1 = w_currentLetter + (parseInt(w_nextNumber));
-    pawnMove2 = w_currentLetter + ((parseInt(w_nextNumber) + 1));
-    let checkMove1 = document.getElementById(pawnMove1).children.length;
-    let checkMove2 = document.getElementById(pawnMove2).children.length;
-    let right = alphabet.indexOf(w_currentLetter) + 1;
-    let left = alphabet.indexOf(w_currentLetter) - 1;
+        if (boxRight?.children.length === 1 && boxRight.children[0].alt.split(' ')[0] === 'White') {
+            boxRight.classList.add('capture');
+        }
+        if (boxLeft?.children.length === 1 && boxLeft.children[0].alt.split(' ')[0] === 'White') {
+            boxLeft.classList.add('capture');
+        }
 
-    if (w_currentLetter + w_currentNumber === w_currentLetter + 2) {
-        if (checkMove1 === 0) {
-            document.getElementById(pawnMove1).classList.add('nextMove');
-            if (checkMove2 === 0) {
-                document.getElementById(pawnMove2).classList.add('nextMove');
+        if (b_currentLetter + b_currentNumber === b_currentLetter + 7) {
+            if (checkMove1 === 0) {
+                document.getElementById(pawnMove1).classList.add('nextMove');
+                if (checkMove2 === 0) {
+                    document.getElementById(pawnMove2).classList.add('nextMove');
+                }
             }
-        }
-    } else {
-        if (checkMove1 === 0 && w_currentLetter === w_nextLetter) {
-            document.getElementById(pawnMove1).classList.add('nextMove');
-        }
-
-    }
-    state.className += ' hold';
-
-}
-function bPawnDragStart(state) {
-    w_currentLetter = state?.parentNode.id.charAt(0);
-    w_currentNumber = state?.parentNode.id.slice(1);
-    w_nextLetter = state?.parentNode.id.charAt(0);
-    w_nextNumber = parseInt(state?.parentNode.id.slice(1)) - 1;
-    pawnMove1 = w_currentLetter + w_nextNumber;
-    pawnMove2 = w_currentLetter + ((parseInt(w_nextNumber) - 1));
-    let checkMove1 = document.getElementById(pawnMove1).children.length;
-    let checkMove2 = document.getElementById(pawnMove2).children.length;
-    let right = alphabet.indexOf(w_currentLetter) + 1;
-    let left = alphabet.indexOf(w_currentLetter) - 1;
-
-    if (w_currentLetter + w_currentNumber === w_currentLetter + 7) {
-        if (checkMove1 === 0) {
-            document.getElementById(pawnMove1).classList.add('nextMove');
-            if (checkMove2 === 0) {
-                document.getElementById(pawnMove2).classList.add('nextMove');
+        } else {
+            if (checkMove1 === 0 && b_currentLetter === b_nextLetter) {
+                document.getElementById(pawnMove1).classList.add('nextMove');
             }
+
         }
-    } else {
-        if (checkMove1 === 0 && w_currentLetter === w_nextLetter) {
-            document.getElementById(pawnMove1).classList.add('nextMove');
+        state.className += ' hold';
+
+    } else { //--------------drop funtion------------
+        // let checkMove1 = document.getElementById(pawnMove1)?.children.length;
+        // let checkMove2 = document.getElementById(pawnMove2)?.children.length;
+        if (state.classList.contains('nextMove')) {
+            document.getElementById(pawnMove1)?.classList.remove('nextMove');
+            document.getElementById(pawnMove2)?.classList.remove('nextMove');
+            state.append(newFill);
+        } else {
+            document.getElementById(pawnMove1)?.classList.remove('nextMove');
+            document.getElementById(pawnMove2)?.classList.remove('nextMove');
+        }
+        if (state.classList.contains('capture')) {
+            boxLeft?.classList.remove('capture');
+            boxRight?.classList.remove('capture');
+            state.innerHTML = '';
+            state.append(newFill);
+        } else {
+            boxLeft?.classList.remove('capture');
+            boxRight?.classList.remove('capture');
+        }
+    }
+
+}
+
+// ---------------------Function of the White Pawn----------------------------------------------
+function wPawnDrag(state, move) {
+
+    if (move === 'DragStart') {
+        w_currentLetter = state?.parentNode.id.charAt(0);
+        w_currentNumber = state?.parentNode.id.slice(1);
+        w_nextLetter = state?.parentNode.id.charAt(0);
+        w_nextNumber = parseInt(state?.parentNode.id.slice(1)) + 1;
+        pawnMove1 = w_currentLetter + (parseInt(w_nextNumber));
+        pawnMove2 = w_currentLetter + ((parseInt(w_nextNumber) + 1));
+        checkMove1 = document.getElementById(pawnMove1)?.children.length;
+        checkMove2 = document.getElementById(pawnMove2)?.children.length;
+
+        right = (alphabet[alphabet.indexOf(w_currentLetter) + 1]) + w_nextNumber;
+        left = (alphabet[alphabet.indexOf(w_currentLetter) - 1]) + w_nextNumber;
+        boxRight = document?.getElementById(right);
+        boxLeft = document?.getElementById(left);
+
+        if (boxRight?.children.length === 1 && boxRight.children[0].alt.split(' ')[0] === 'Black') {
+            boxRight.classList.add('capture');
+        }
+        if (boxLeft?.children.length === 1 && boxLeft.children[0].alt.split(' ')[0] === 'Black') {
+            boxLeft.classList.add('capture');
+        }
+
+        if (w_currentLetter + w_currentNumber === w_currentLetter + 2) {
+            if (checkMove1 === 0) {
+                document.getElementById(pawnMove1).classList.add('nextMove');
+                if (checkMove2 === 0) {
+                    document.getElementById(pawnMove2).classList.add('nextMove');
+                }
+            }
+        } else {
+            if (checkMove1 === 0 && w_currentLetter === w_nextLetter) {
+                document.getElementById(pawnMove1).classList.add('nextMove');
+            }
+
+        }
+        state.className += ' hold';
+    }
+    else { //------------drop function
+        // let checkMove1 = document.getElementById(pawnMove1)?.children.length;
+        // let checkMove2 = document.getElementById(pawnMove2)?.children.length;
+        if (state.classList.contains('nextMove')) {
+            document.getElementById(pawnMove1)?.classList.remove('nextMove');
+            document.getElementById(pawnMove2)?.classList.remove('nextMove');
+            state.append(newFill);
+        }
+        else {
+            document.getElementById(pawnMove1)?.classList.remove('nextMove');
+            document.getElementById(pawnMove2)?.classList.remove('nextMove');
+        }
+        if (state.classList.contains('capture')) {
+            boxLeft?.classList.remove('capture');
+            boxRight?.classList.remove('capture');
+            state.innerHTML = '';
+            state.append(newFill);
+        } else {
+            boxLeft?.classList.remove('capture');
+            boxRight?.classList.remove('capture');
         }
 
     }
-    state.className += ' hold';
 }
-
-
-
 
 //-----------------Timer----------------------------------------
 document.getElementById("b_minute").innerHTML = "05";
