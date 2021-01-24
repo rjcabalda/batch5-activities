@@ -33,6 +33,7 @@ let pause = true;
 let hasClicked = false;
 let horseMoves = [];
 let currentPiece;
+let bishopMoves = [];
 
 //-----------------Timer----------------------------------------
 document.getElementById("b_minute").innerHTML = "05";
@@ -189,6 +190,12 @@ for (const piece of pieces) {
                 newFill = piece;
                 setTimeout(() => this.className = 'invisible', 0);
                 break;
+            case 'White Bishop':
+                currentPiece = piece.alt;
+                whiteBishop(piece, 'DragStart');
+                newFill = piece;
+                setTimeout(() => this.className = 'invisible', 0);
+                break;
         }
     });
 
@@ -213,6 +220,9 @@ function dragDrop() {
             break;
         case 'Black Horse':
             blackHorse(this, 'DragDrop');
+            break;
+        case 'White Bishop':
+            whiteBishop(this, 'DragDrop');
             break;
     }
 
@@ -430,6 +440,29 @@ function blackHorse(state, move) {
             checkPiece?.classList.remove('nextMove');
             checkPiece?.classList.remove('capture');
         }
+
+    }
+}
+
+function whiteBishop(state, move) {
+    w_currentLetter = state.parentNode.id.charAt(0);
+    w_currentNumber = state.parentNode.id.slice(1);
+
+
+    let num = parseInt(w_currentNumber) + 1;
+    if (move === 'DragStart') {
+        let currentIndex = alphabet.indexOf(w_currentLetter);
+        for (let i = (parseInt(currentIndex) - 1); i >= 0; i--) {
+            bishopMoves.push(alphabet[i] + num);
+            // console.log(alphabet[i] + num);
+            num++;
+        }
+        for (let i = (parseInt(currentIndex) + 1); i <= 7; i++) {
+            // console.log(alphabet[i] + i);
+        }
+        console.log(bishopMoves);
+
+    } else {
 
     }
 }
