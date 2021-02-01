@@ -35,6 +35,7 @@ let horseMoves = [];
 let currentPiece;
 let bishopMoves = [];
 
+
 //-----------------Timer----------------------------------------
 document.getElementById("b_minute").innerHTML = "05";
 document.getElementById("b_seconds").innerHTML = "00";
@@ -447,24 +448,197 @@ function blackHorse(state, move) {
 function whiteBishop(state, move) {
     w_currentLetter = state.parentNode.id.charAt(0);
     w_currentNumber = state.parentNode.id.slice(1);
+    let upperLeft = parseInt(w_currentNumber) + 1;
+    let upperRight = parseInt(w_currentNumber) + 1;
+    let lowerLeft = parseInt(w_currentNumber) - 1;
+    let lowerRight = parseInt(w_currentNumber) - 1;
+    let upperLeftCapture = true;
+    let lowerLeftCapture = true;
+    let upperRightCapture = true;
+    let lowerRightCapture = true;
+    let upperLeftMove = true;
+    let lowerLeftMove = true;
+    let upperRightMove = true;
+    let lowerRightMove = true;
 
-
-    let num = parseInt(w_currentNumber) + 1;
     if (move === 'DragStart') {
         let currentIndex = alphabet.indexOf(w_currentLetter);
+        bishopMoves = [];
         for (let i = (parseInt(currentIndex) - 1); i >= 0; i--) {
-            bishopMoves.push(alphabet[i] + num);
-            // console.log(alphabet[i] + num);
-            num++;
+            let dom_upper_left = document.getElementById(alphabet[i] + upperLeft);
+            let dom_lower_left = document.getElementById(alphabet[i] + lowerLeft);
+
+            if (dom_upper_left?.children[0]?.alt.split(' ')[0] === 'White') upperLeftMove = false;
+            if (dom_lower_left?.children[0]?.alt.split(' ')[0] === 'White') lowerLeftMove = false;
+
+
+            if (dom_upper_left?.children.length === 0 && upperLeftMove) {
+                dom_upper_left?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + upperLeft);
+
+            }
+            if (dom_lower_left?.children.length === 0 && lowerLeftMove) {
+                dom_lower_left?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + lowerLeft);
+
+            }
+            if (dom_upper_left?.children[0]?.alt.split(' ')[0] === 'Black' && upperLeftCapture) {
+                dom_upper_left?.classList.add('capture');
+                upperLeftCapture = false;
+                bishopMoves.push(alphabet[i] + upperLeft);
+            }
+            if (dom_lower_left?.children[0]?.alt.split(' ')[0] === 'Black' && lowerLeftCapture) {
+                document.getElementById(alphabet[i] + upperLeft)?.classList.add('capture');
+                lowerLeftCapture = false;
+                bishopMoves.push(alphabet[i] + upperLeft);
+            }
+            // if(document.getElementById(alphabet[i] + upperLeft)?.children.){}
+            upperLeft++;
+            lowerLeft--;
+
         }
-        for (let i = (parseInt(currentIndex) + 1); i <= 7; i++) {
-            // console.log(alphabet[i] + i);
+        for (let i = (parseInt(currentIndex) + 1); i <= 8; i++) {
+            let dom_upper_right = document.getElementById(alphabet[i] + upperRight);
+            let dom_lower_right = document.getElementById(alphabet[i] + lowerRight);
+            if (dom_upper_right?.children[0]?.alt.split(' ')[0] === 'White') upperRightMove = false;
+            if (dom_lower_right?.children[0]?.alt.split(' ')[0] === 'White') lowerRightMove = false;
+            if (dom_upper_right?.children.length === 0 && upperRightMove) {
+                dom_upper_right?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + upperRight);
+            }
+            if (dom_lower_right?.children.length === 0 && lowerRightMove) {
+                dom_lower_right?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + lowerRight);
+            }
+            if (dom_upper_right?.children[0]?.alt.split(' ')[0] === 'Black' && upperRightCapture) {
+                dom_upper_right?.classList.add('capture');
+                upperRightCapture = false;
+                bishopMoves.push(alphabet[i] + upperRight);
+            }
+            if (dom_lower_right?.children[0]?.alt.split(' ')[0] === 'Black' && lowerRightCapture) {
+                dom_lower_right?.classList.add('capture');
+                lowerRightCapture = false;
+                bishopMoves.push(alphabet[i] + lowerRight);
+            }
+
+            upperRight++;
+            lowerRight--;
         }
-        console.log(bishopMoves);
+
+
 
     } else {
+        if (state.classList.contains('capture')) {
+            state.innerHTML = '';
+            state.append(newFill);
+        }
+        if (state.classList.contains('nextMove')) {
+            state.append(newFill);
+        }
+        for (bishopMove of bishopMoves) {
+            let checkPiece = document.getElementById(bishopMove);
+            checkPiece?.classList.remove('nextMove');
+            checkPiece?.classList.remove('capture');
+        }
 
     }
 }
+function blackBishop(state, move) {
+    b_currentLetter = state.parentNode.id.charAt(0);
+    b_currentNumber = state.parentNode.id.slice(1);
+    let upperLeft = parseInt(b_currentNumber) + 1;
+    let upperRight = parseInt(b_currentNumber) + 1;
+    let lowerLeft = parseInt(b_currentNumber) - 1;
+    let lowerRight = parseInt(b_currentNumber) - 1;
+    let upperLeftCapture = true;
+    let lowerLeftCapture = true;
+    let upperRightCapture = true;
+    let lowerRightCapture = true;
+    let upperLeftMove = true;
+    let lowerLeftMove = true;
+    let upperRightMove = true;
+    let lowerRightMove = true;
 
+    if (move === 'DragStart') {
+        let currentIndex = alphabet.indexOf(b_currentLetter);
+        bishopMoves = [];
+        for (let i = (parseInt(currentIndex) - 1); i >= 0; i--) {
+            let dom_upper_left = document.getElementById(alphabet[i] + upperLeft);
+            let dom_lower_left = document.getElementById(alphabet[i] + lowerLeft);
+
+            if (dom_upper_left?.children[0]?.alt.split(' ')[0] === 'White') upperLeftMove = false;
+            if (dom_lower_left?.children[0]?.alt.split(' ')[0] === 'White') lowerLeftMove = false;
+
+
+            if (dom_upper_left?.children.length === 0 && upperLeftMove) {
+                dom_upper_left?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + upperLeft);
+
+            }
+            if (dom_lower_left?.children.length === 0 && lowerLeftMove) {
+                dom_lower_left?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + lowerLeft);
+
+            }
+            if (dom_upper_left?.children[0]?.alt.split(' ')[0] === 'Black' && upperLeftCapture) {
+                dom_upper_left?.classList.add('capture');
+                upperLeftCapture = false;
+                bishopMoves.push(alphabet[i] + upperLeft);
+            }
+            if (dom_lower_left?.children[0]?.alt.split(' ')[0] === 'Black' && lowerLeftCapture) {
+                document.getElementById(alphabet[i] + upperLeft)?.classList.add('capture');
+                lowerLeftCapture = false;
+                bishopMoves.push(alphabet[i] + upperLeft);
+            }
+            // if(document.getElementById(alphabet[i] + upperLeft)?.children.){}
+            upperLeft++;
+            lowerLeft--;
+
+        }
+        for (let i = (parseInt(currentIndex) + 1); i <= 8; i++) {
+            let dom_upper_right = document.getElementById(alphabet[i] + upperRight);
+            let dom_lower_right = document.getElementById(alphabet[i] + lowerRight);
+            if (dom_upper_right?.children[0]?.alt.split(' ')[0] === 'White') upperRightMove = false;
+            if (dom_lower_right?.children[0]?.alt.split(' ')[0] === 'White') lowerRightMove = false;
+            if (dom_upper_right?.children.length === 0 && upperRightMove) {
+                dom_upper_right?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + upperRight);
+            }
+            if (dom_lower_right?.children.length === 0 && lowerRightMove) {
+                dom_lower_right?.classList.add('nextMove');
+                bishopMoves.push(alphabet[i] + lowerRight);
+            }
+            if (dom_upper_right?.children[0]?.alt.split(' ')[0] === 'Black' && upperRightCapture) {
+                dom_upper_right?.classList.add('capture');
+                upperRightCapture = false;
+                bishopMoves.push(alphabet[i] + upperRight);
+            }
+            if (dom_lower_right?.children[0]?.alt.split(' ')[0] === 'Black' && lowerRightCapture) {
+                dom_lower_right?.classList.add('capture');
+                lowerRightCapture = false;
+                bishopMoves.push(alphabet[i] + lowerRight);
+            }
+
+            upperRight++;
+            lowerRight--;
+        }
+
+
+
+    } else {
+        if (state.classList.contains('capture')) {
+            state.innerHTML = '';
+            state.append(newFill);
+        }
+        if (state.classList.contains('nextMove')) {
+            state.append(newFill);
+        }
+        for (bishopMove of bishopMoves) {
+            let checkPiece = document.getElementById(bishopMove);
+            checkPiece?.classList.remove('nextMove');
+            checkPiece?.classList.remove('capture');
+        }
+
+    }
+}
 
