@@ -58,4 +58,10 @@
     display: flex;
     flex-direction: column;
 }
-
+.suggest_btn{
+   
+    cursor: pointer;
+}
+.suggest_btn:hover, .suggest_btn:active{
+    color: blue;
+}
