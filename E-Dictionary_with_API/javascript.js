@@ -26,7 +26,7 @@ function clear() {
     Display.innerHTML = '';
 }
 function errorDisplay(word) {
-    Display.classList.remove('invisible');
+    Display?.classList.remove('invisible');
     let display = `
     <h1 class="break-text breakText"><em>${word}</e> is not in the system</h1>
     <p>Sorry, the word you’re looking for can’t be found in the dictionary.</p>
@@ -35,7 +35,7 @@ function errorDisplay(word) {
 
 }
 function loading() {
-    Display.classList.remove('invisible');
+    Display?.classList.remove('invisible');
     let loadingProgress =
         `<div class="loadingContainer">
                 <div class="spinner-border text-primary" role="status">
@@ -45,7 +45,7 @@ function loading() {
     Display.innerHTML = loadingProgress;
 }
 function maintenanceDisplay() {
-    Display.classList.remove('invisible');
+    Display?.classList.remove('invisible');
     let display = `
     <h1 class='alert alert-warning'>System Error</h1>
     <p class="alert alert-danger">Ops, something went wrong!</p>
