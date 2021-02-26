@@ -161,15 +161,12 @@ function fetchData(word) {
             else {
                 clear();
                 errorDisplay(word);
-                console.log('This word has no data');
             }
 
 
         })
         .catch(error => {
             maintenanceDisplay();
-            // console.log('Error here:' + error)
-            // return error
         })
 
 }
